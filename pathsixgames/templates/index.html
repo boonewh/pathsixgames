@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}PathSix Games | Reign of Winter{% endblock %}
+
+{% block meta_description %}<meta name="description" content="PathSix is a website for friends who have been playing rpgs together for three decades. This is the main page for our current Pathfinder campaign, Reign of Winter.">{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="hero">
+            <div class="heroWelcome">
+                <h1>Welcome To Our Game Page!</h1>
+                <h2>"Reign of Winter"</h2>
+                <h3>Our Winter Expedition Has Begun!</h3>
+                <p>
+                    Welcome to our chilling expedition into the icy realms of Golarion and beyond, where the cold conceals ancient mysteries! Follow our bold heroes as they unravel the secrets of a wintry curse threatening the lands. What truths lie buried beneath the snow? What perils await in the frozen reaches? Step into our adventure log and join us to uncover the fate of the world as the threads of winter weave their tale!
+                </p>
+                <h2>Follow Our Party's Journey!</h2>
+                <p>
+                    Warning! Spoilers for the "Reign of Winter" Adventure Path.
+                </p>
+                <button onclick="window.location.href='book1';">Adventure Log</button>
+            </div>
+        </div>
+    
+        <section class="container1">
+            <div id="shackles">
+                <h3 >The Adventure Path</h3>
+                <p>We are playing the "Reign of Winter" Adventure Path sold by Paizo, Inc.</p>
+                    <blockquote>
+                        It has been a century since the immortal witch Baba Yaga last visited the world, and the hour draws nigh for her return. But when she fails to appear in the frozen realm of Irrisen to usher in its newest ruler, pockets of winter begin to grow throughout the Inner Sea. After 1,400 years of perpetual winter, the icy curse of Irrisen is spreading! What links do these strange blizzards and swaths of wintry landscapes have with Irrisen, and is there any truth to the growing rumors that the Witch Queen Elvanna has taken full control of the realm? Can her plans for the Inner Sea be thwarted, or will the Reign of Winter engulf the world?
+                    </blockquote>
+                    <cite>
+                        &mdash; Paizo Adventure Path Teaser
+                    </cite>
+            </div>
+            <a href="{{ url_for('static', filename='images/heldren.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/heldren.jpg') }}" alt="Shackes Map" id="The town of Heldren, starting point for the adventure."></a>
+        </section>
+    
+        <aside class="container2">
+            <a href="https://www.d20srd.org/srd/variant/classes/gestaltCharacters.htm"><img src="{{ url_for('static', filename='images/gestalt-link.jpg') }}" alt="Link to Gestalt characters rules"></a>
+            <a href="https://www.sortekanin.com/collection/items/"><img src="{{ url_for('static', filename='images/SorteKanin_link.jpg') }}" alt="SorteKanin Treasure Database"></a>
+        </aside>
+    
+        <div class="container4 pop">
+            <h1>The Crew</h1>
+            <div class="subCon1">
+                <figure>
+                    <img src="/images/Kasmira.jpg" alt="Kasmira">
+                    <figcaption>
+                        <p>Kasmira de la Torre</p>
+                        <p>Human Gunslinger/Rogue</p>
+                        <a href="/images/kasmira-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                    </figcaption>
+                </figure>
+                <img src="/images/Kasmira.jpg" alt="Kasmira" class="kasmira">
+        
+                <figure id="finn">
+                    <figcaption>
+                        <p>Finn</p>
+                        <p>Undine Kineticist/Rogue</p>
+                        <a href="/images/finn-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                    </figcaption>
+                    <img src="/images/Finn.jpg" alt="Finn">
+                </figure>
+                <img src="/images/Finn.jpg" alt="Finn" class="finn">
+            </div>
+            <div class="empty"></div>
+            <div class="subCon2">
+                <figure id="red">
+                    <figcaption>
+                        <p>Red</p>
+                        <p>Dwarven Inquisitor/War Priest</p>
+                        <a href="/images/red-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                    </figcaption>
+                    <img src="/images/red.jpg" alt="Red">
+                </figure>
+                <img src="/images/red.jpg" alt="Red" class="red">
+        
+                <figure>
+                    <img src="/images/Varen2.jpg" alt="Varen">
+                    <figcaption>
+                        <p>Varen Galashantar</p>
+                        <p>Aquatic Elf Gunslinger/Magus</p>
+                        <a href="/images/varen-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                    </figcaption>
+                </figure>
+                <img src="/images/Varen2.jpg" alt="Varen" class="varen">
+            </div>
+        </div>
+        <hr>
+        <section class="container5">
+            <div>
+                <div class="blog2">
+                    <h3>An excerpt from our last adventure entry:</h3>
+                </div>
+                <div class="blog2" id="blog-container"></div>
+                <div class="blog2"><p>You can find our entire story in the <a href="adventure_log.html">Adventure Log</a></p></div>
+            </div>
+    
+            <div class="blog3">
+                <h3>Miniatures Gallery</h3>
+                <a href="images/gallery_image1.jpg"><img src="images/gallery_image1.jpg" alt="Mini Gallery Images"></a>
+                <a href="images/gallery_image2.jpg"><img src="images/gallery_image2.jpg" alt="Mini Gallery Images"></a>
+                <a href="images/gallery_image3.jpg"><img src="images/gallery_image3.jpg" alt="Mini Gallery Images"></a>
+                <a href="images/gallery_image4.jpg"><img src="images/gallery_image4.jpg" alt="Mini Gallery Images"></a>
+                <a href="images/gallery_image5.jpg"><img src="images/gallery_image5.jpg" alt="Mini Gallery Images"></a>
+                <a href="images/gallery_image6.jpg"><img src="images/gallery_image6.jpg" alt="Mini Gallery Images"></a>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block scripts %}<script src="{{ url_for('static', filename='js/scrollEffect.js') }}"></script>{% endblock %}
+{% block styles %} <script src="{{ url_for('static', filename='js/blog_fetch.js') }}" {% endblock %}

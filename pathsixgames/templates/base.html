@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta_description %}{% endblock %}
+    <meta name="Author" content="William Boone">
+    <title>{% block title %}{% endblock %}</title> <!-- Title Variable -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+    <body>
+        <header>
+            <nav class="navFirst">
+                <img src="{{ url_for('static', filename='images/pathsix_games_logo.png') }}" alt="The Pathfinder 6" id="mainLogo">
+                <a href="#" class="navicon"><img src="{{ url_for('static', filename='images/navicon.png') }}" alt="Hamburger Navigation Icon"></a>
+                <ul>
+                    <li><a href="/">Home Page</a></li> 
+                    <li><a href="{{ url_for('book1') }}">Adventure Log</a></li>
+                    <li><a href="{{ url_for('dice') }}">Dice Roller</a></li>
+                    <li><a href="/">Past Adventures</a></li>
+                    <li><a href="{{ url_for('rules') }}">Rules Page</a></li>
+                </ul>
+            </nav>
+        </header>
+
+            {% block content %}{% endblock %}
+
+        <hr>
+        <footer>
+            <div id="foot">
+                <a href="/" id="footLink">Back to Top</a> 
+                <img src="{{url_for('static', filename='images/baba_yagas_hut_footer.png') }}" alt="Baba Yaga's hut" id="footerImg">
+                <p>All Rights Reserved</p>
+            </div>
+            <a href="https://www.pathsixdesigns.com" id="foot2">PathSix Web Design</a>
+        </footer>
+
+        {% block scripts %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,581 @@
+:root {
+  --primary: #253231; /* Outer Space - Deep backgrounds */
+  --secondary: #80a4a3; /* Gumbo - Accents and highlights */
+  --text: #afc1b9; /* Powder Ash - Text and borders */
+  --accent: #73939c; /* Gothic - Interactive elements */
+  --transition: all 0.3s linear;
+  --gradient: linear-gradient(to bottom, #010101 0%, #253231 100%);
+}
+
+/* html and body styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--primary);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: 1.2em;
+}
+
+/* Headings */
+h1,
+h2 {
+  font-size: 2.3em;
+  line-height: 1.1em;
+  font-family: Alkatra, Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+/* Navigation Styles */
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center; /* Center the nav links vertically */
+  margin: 0;
+  padding: 5px 10px; /* Minimal padding */
+  height: auto; /* Make the section as small as possible */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px; /* Reduce spacing between nav items */
+}
+
+nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.navicon {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.miniLogo {
+  width: 6%;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+#mainLogo {
+  width: 18%; /* Reduce logo size for better balance */
+}
+
+.miniLogo {
+  width: 6%;
+}
+
+/* Ensure nav links are closer to the right */
+nav ul {
+  margin-left: auto; /* Push nav links to the right */
+}
+
+/* Hero Styles */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  padding-top: 20px;
+  background: url(../images/baba_yaga_hero.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroWelcome {
+  width: 50%;
+  align-items: center;
+  color: var(--text);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-bottom: 20px; /* Ensure margin below the content */
+}
+
+/* Button Styles */
+button {
+  margin: 20px 0 30px 25px;
+  width: 250px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  font-family: Alkatra, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: var(--text);
+  background-color: var(--primary);
+}
+
+/* Body Styles */
+
+.container1 {
+  display: flex;
+  color: var(--text);
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: inset 0 -4px 8px #ffff(0, 0, 0, 0.2);
+  border: 0.25px solid var(--text);
+  background: var(--gradient);
+  padding: 20px;
+}
+
+#shackles {
+  width: 50%;
+  padding: 0 30px;
+}
+
+#shacklesMap {
+  width: 100%;
+}
+
+/* Quote Styles */
+
+blockquote {
+  margin: 10px 10px 20px 30px;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+blockquote::after {
+  content: close-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Links Styles */
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: inset 0 -4px 8px #ffff(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.container2 img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Character Section Styles */
+.container4 {
+  display: flex;
+  background-size: 45%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8) translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+}
+
+.pop {
+  animation: pop 0.5s ease-in-out forwards;
+}
+
+.container4 img {
+  width: 40%;
+  opacity: 0;
+  cursor: pointer;
+  min-height: 330px;
+}
+
+.finn,
+.kasmira,
+.red,
+.varen {
+  display: none; /* Hidden by default */
+  position: absolute; /* Positioned absolutely */
+  max-width: 450px;
+  top: 10%; /* Centered vertically */
+  left: 35%; /* Centered horizontally */
+  transform: translate(-50%, -50%); /* Offset the centering */
+  z-index: 10; /* Higher z-index to ensure they appear above other content */
+}
+
+.subCon1 figure {
+  display: flex;
+  width: 30%;
+  margin: 25px;
+  align-items: center;
+}
+
+.subCon2 figure {
+  display: flex;
+  width: 30%;
+  margin: 25px 0;
+  align-items: center;
+}
+
+.subCon1 img,
+.subCon2 img {
+  box-shadow: 10px 25px 30px 0px rgba(128, 128, 128, 0.6);
+  margin: 10px;
+}
+
+.subCon1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.subCon2 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#red,
+#finn {
+  display: flex;
+  flex-direction: row; /* Align items in a row to fix column-reverse from mobile */
+}
+
+#red figcaption,
+#finn figcaption {
+  text-align: right;
+}
+
+figcaption {
+  font-size: 1.3em;
+  font-family: Alkatra, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+figure:hover + img {
+  display: block;
+}
+
+.empty {
+  height: 0;
+}
+
+/* Adventure Log Styles */
+
+.blog {
+  display: block;
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+}
+
+.blog .left {
+  float: left;
+  width: 15%;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.blog .right {
+  float: right;
+  width: 15%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.blog h2 {
+  text-align: start;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* Dice Roller Styles */
+
+input[type="number"] {
+  width: 50px;
+}
+
+.dice {
+  width: 75%;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  margin: auto;
+}
+
+.dicePic {
+  width: 250px;
+  float: right;
+  border-radius: 125px;
+  margin-right: 320px;
+}
+
+#total,
+#clearResults {
+  margin-left: 10%;
+}
+
+/* Admin Styles */
+
+/* Style the container for links */
+.adminLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the buttons */
+  padding-top: 20px;
+  background: #010101;
+}
+
+/* Style the buttons (links) */
+.adminLinks .btn-link {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+
+/* Hover effect for buttons */
+.adminLinks .btn-link:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* footer styles */
+#foot {
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--background);
+  justify-content: center;
+  align-items: center;
+  clear: both;
+}
+
+#footLink {
+  color: var(--background);
+}
+
+#footerImg {
+  width: 10%;
+  margin: 5px;
+}
+
+#foot2 {
+  display: flex;
+  background-color: var(--tertiary);
+  color: var(--text);
+  justify-content: center;
+  padding-top: 2px;
+  font-family: Alkatra, Arial, Helvetica, sans-serif;
+}
+
+/* Form Styles */
+
+.formMain {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: var(--gradient);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: var(--primary);
+  padding: 20px;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  transition: var(--transition);
+}
+
+.form h1 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form fieldset {
+  border: none;
+  padding: 0;
+}
+
+form legend {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--secondary);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+form input:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 5px var(--secondary);
+}
+
+form input[type="submit"] {
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+span {
+  font-size: 0.8rem;
+  color: red;
+}
+
+.question {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.question a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.question a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.remember input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+  accent-color: var(--accent);
+}
+
+form div:last-child {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  /* Navigation Styles */
+  nav ul {
+    display: none; /* Hide nav links for mobile */
+  }
+
+  .navicon {
+    display: block; /* Show navicon for mobile */
+  }
+
+  /* Adventure Log Responsive Styles */
+  .blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog {
+    width: 100%;
+  }
+
+  .blog img {
+    width: 100%;
+  }
+
+  .blog h2 {
+    text-align: start;
+    font-size: 1.4em;
+  }
+}

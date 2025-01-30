@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}PathSix Games | Book 1 - Reign of Winter{% endblock %}
+
+{% block meta_description %}<meta name="description" content="Adventure Log for the PathSix tabletop RPG group in book 1 of the Reign of Winter adventure path.">{% endblock %}
+
+{% block content %}
+    <main class="blog">
+        <h1>Book 1: "The Snows of Summer"</h1>
+        {% for post in posts %}
+        <article class="entry">
+            <h2>{{ post.date_posted }}</h2>
+            <h3>{{ post.title }}</h3>
+            <img src="{{ url_for('static', filename='images/' + post.image) }}" 
+                 alt="{{ post.imageAltText }}" 
+                 class="{% if loop.index0 % 2 == 0 %}left{% else %}right{% endif %}">
+            <p>{{ post.content }}</p>
+            <hr>
+        </article>
+    {% endfor %}
+    
+    </main>
+{% endblock %}
+
+
+<!--
+    <main class="blog">
+        <h1>Posts for Book {{ book_number }}</h1>
+
+        (COMMENT THIS) Sorting options
+        <div class="sorting">
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="updateSortOrder()">
+                <option value="desc" {% if sort_order == 'desc' %}selected{% endif %}>Newest First</option>
+                <option value="asc" {% if sort_order == 'asc' %}selected{% endif %}>Oldest First</option>
+            </select>
+        </div>
+
+        (COMMENT THIS) Blog entries
+        {% for post in posts %}
+            <div class="entry">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.date.strftime('%B %d, %Y') }}</p>
+                <img src="{{ url_for('static', filename='images/' + post.image) }}" alt="{{ post.imageAltText }}">
+                <p>{{ post.text }}</p>
+            </div>
+        {% endfor %}
+
+        (COMMENT THIS) Navigation
+        <nav>
+            <ul>
+                {% for i in range(1, 7) %}
+                    <li>
+                        <a href="{{ url_for('blog', book_number=i, sort=sort_order) }}"
+                           class="{% if i == book_number %}active{% endif %}">
+                            Book {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </main>
+
+    <script>
+        // JavaScript to update the sort order dynamically
+        function updateSortOrder() {
+            const sort = document.getElementById('sort').value;
+            const params = new URLSearchParams(window.location.search);
+            params.set('sort', sort);
+            window.location.search = params.toString();
+        }
+    </script>
+
+-->
