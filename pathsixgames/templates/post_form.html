@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if post %}Edit Post{% else %}PathSix Admin Dashboard{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+    <meta name="description" content="{% if post %}Editing Post{% else %}PathSix Admin Dashboard.{% endif %}">
+{% endblock %}
+
+{% block content %}
+<main class="formMain">
+    <h1>{% if post %}Edit Blog Post{% else %}Admin Dashboard{% endif %}</h1>
+    {% if not post %}
+        <h1>{{ current_user.username }}</h1>
+        <div class="adminLinks">
+            <a href="{{ url_for('account') }}" class="btn-link">Account</a>
+            <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+        </div>
+    {% endif %}
+    
+    <div class="form">
+        <h2>{% if post %}Edit Blog Post{% else %}Create Blog Post{% endif %}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ post_form.hidden_tag() }}
+            <div>
+                {{ post_form.title.label }}<br>
+                {{ post_form.title }}<br>
+            </div>
+            <div>
+                {{ post_form.content.label }}<br>
+                {{ post_form.content }}<br>
+            </div>
+            <div>
+                {{ post_form.image.label }}<br>
+                {{ post_form.image }}<br>
+            </div>
+            <div>
+                {{ post_form.submit }}
+            </div>
+        </form>
+
+        {% if not post %}
+            <hr>
+            <h2>Upload to Gallery</h2>
+            <form method="post" enctype="multipart/form-data">
+                {{ image_form.hidden_tag() }}
+                <div>
+                    {{ image_form.image.label }}<br>
+                    {{ image_form.image }}<br>
+                </div>
+                <div>
+                    {{ image_form.submit }}
+                </div>
+            </form>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}
+

@@ -1,6 +1,6 @@
 import os
 
-from flask import render_template, flash, redirect, url_for, request, current_app
+from flask import render_template, flash, redirect, url_for, request, current_app, abort
 from pathsixgames import app, db, bcrypt
 from pathsixgames.forms import RegistrationForm, LoginForm, UpdateEmailForm, PostForm, PostImageForm
 from pathsixgames.models import User, Post, GalleryImage
@@ -73,10 +73,11 @@ def dice():
 def rules():
     return render_template('rules.html')
 
-@app.route('/book1')
+@app.route("/book1")
 def book1():
-    posts=Post.query.all()
+    posts = Post.query.all()
     return render_template('RoW_book1.html', posts=posts)
+
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
@@ -108,7 +109,8 @@ def dashboard():
         flash('Image uploaded to gallery!', 'success')
         return redirect(url_for('dashboard'))
 
-    return render_template('dashboard.html', post_form=post_form, image_form=image_form)
+    return render_template('post_form.html', post_form=post_form, image_form=image_form, post=None)
+
 
 @app.route('/register', methods=['GET', 'POST']) 
 def register():
@@ -157,7 +159,23 @@ def account():
         form.email.data = current_user.email
     return render_template('account.html', form=form)
 
-@app.route('/gallery')
-def gallery():
-    images = GalleryImage.query.all()
-    return render_template('index.html', images=images)
+@app.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+
+    post_form = PostForm()
+    if post_form.validate_on_submit():
+        post.title = post_form.title.data
+        post.content = post_form.content.data
+        db.session.commit()
+        flash('Your post has been updated!', 'success')
+        return redirect(url_for('book1'))
+    elif request.method == 'GET':
+        post_form.title.data = post.title
+        post_form.content.data = post.content
+
+    return render_template('post_form.html', post_form=post_form, post=post)
+

@@ -11,17 +11,28 @@
         <article class="entry">
             <h2>{{ post.title }}</h2>
             <h3>{{ post.date_posted.strftime('%B %d, %Y') }}</h3>
+            
             {% if post.image %}
                 <img src="{{ url_for('static', filename='images/' + post.image) }}"
                     alt="{{ post.imageAltText }}"
                     class="{% if loop.index0 % 2 == 0 %}left{% else %}right{% endif %}">
             {% endif %}
-            <p>{{ post.content }}</p>
+            
+            {% for paragraph in post.content.split('\n') if paragraph.strip() %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+
+            {% if current_user.is_authenticated %}
+                <div class="adminLinks">
+                    <a href="{{ url_for('update_post', post_id=post.id) }}" class="btn-link">Edit</a>
+                    <a href="{{ url_for('update_post', post_id=post.id) }}" class="btn-link">Delete</a>
+                </div>
+            {% endif %}
         </article>
-    {% endfor %}
-    
+        {% endfor %}
     </main>
 {% endblock %}
+
 
 
 <!--
