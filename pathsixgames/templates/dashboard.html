@@ -5,16 +5,47 @@
 {% block meta_description %}<meta name="description" content="PathSix Admin Dashboard.">{% endblock %}
 
 {% block content %}
-    <main>
-        <h1>Admin Dashboard</h1>
-        <div class="adminLinks">
-            {% if current_user.is_authenticated %}
-                <a href="{{ url_for('account') }}" class="btn-link">Account</a>
-                <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
-            {% else %}
-                <a href="{{ url_for('login') }}" class="btn-link">Login</a>
-                <a href="{{ url_for('register') }}" class="btn-link">Register</a>
-            {% endif %}
-        </div>
-    </main>
+<main class="formMain">
+    <h1>Admin Dashboard</h1>
+    <h1>{{ current_user.username }}</h1>
+    <div class="adminLinks">
+        <a href="{{ url_for('account') }}" class="btn-link">Account</a>
+        <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+    </div>
+    <div class="form">
+        <h2>Create Blog Post</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ post_form.hidden_tag() }}
+            <div>
+                {{ post_form.title.label }}<br>
+                {{ post_form.title }}<br>
+            </div>
+            <div>
+                {{ post_form.content.label }}<br>
+                {{ post_form.content }}<br>
+            </div>
+            <div>
+                {{ post_form.image.label }}<br>
+                {{ post_form.image }}<br>
+            </div>
+            <div>
+                {{ post_form.submit }}
+            </div>
+        </form>
+        <hr>
+
+        <h2>Upload to Gallery</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ image_form.hidden_tag() }}
+            <div>
+                {{ image_form.image.label }}<br>
+                {{ image_form.image }}<br>
+            </div>
+            <div>
+                {{ image_form.submit }}
+            </div>
+        </form>
+    </div>
+</main>
+
 {% endblock %}

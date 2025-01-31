@@ -89,24 +89,33 @@
         </div>
         <hr>
         <section class="container5">
-            <div>
+            <h2>An excerpt from our last adventure entry:</h2>
+            {% if latest_post %}
                 <div class="blog2">
-                    <h3>An excerpt from our last adventure entry:</h3>
+                    <h3>{{ latest_post.title }}</h3>
+                    <h4>{{ latest_post.date_posted.strftime('%B %d, %Y') }}</h4>
+            
+                    <p>{{ first_paragraph }}</p>
+            
+                    <div class="blog2">
+                        <p>You can find our entire story in the <a href="{{ url_for('book1') }}">Adventure Log</a></p>
+                    </div>
                 </div>
-                <div class="blog2" id="blog-container"></div>
-                <div class="blog2"><p>You can find our entire story in the <a href="adventure_log.html">Adventure Log</a></p></div>
-            </div>
-    
-            <div class="blog3">
-                <h3>Miniatures Gallery</h3>
-                <a href="images/gallery_image1.jpg"><img src="images/gallery_image1.jpg" alt="Mini Gallery Images"></a>
-                <a href="images/gallery_image2.jpg"><img src="images/gallery_image2.jpg" alt="Mini Gallery Images"></a>
-                <a href="images/gallery_image3.jpg"><img src="images/gallery_image3.jpg" alt="Mini Gallery Images"></a>
-                <a href="images/gallery_image4.jpg"><img src="images/gallery_image4.jpg" alt="Mini Gallery Images"></a>
-                <a href="images/gallery_image5.jpg"><img src="images/gallery_image5.jpg" alt="Mini Gallery Images"></a>
-                <a href="images/gallery_image6.jpg"><img src="images/gallery_image6.jpg" alt="Mini Gallery Images"></a>
-            </div>
+            {% else %}
+                <p>No blog posts yet. Stay tuned!</p>
+            {% endif %}
         </section>
+        <hr>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                {% for img in images %}
+                    <img src="{{ url_for('static', filename='images/' + img.image) }}" alt="Gallery Image">
+                {% else %}
+                    <p>No images uploaded yet.</p>
+                {% endfor %}
+            </div>
+        </section>      
     </main>
 {% endblock %}
 

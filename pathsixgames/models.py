@@ -23,7 +23,15 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
+    image = db.Column(db.String(100), nullable=True)  # Add this
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+class GalleryImage(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String(100), nullable=False)  # Store filename
+    date_uploaded = db.Column(db.DateTime, default=datetime.utcnow)
+
+    

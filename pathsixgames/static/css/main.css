@@ -302,6 +302,31 @@ figure:hover + img {
   height: 0;
 }
 
+.container5 {
+  width: 70%;
+  margin: auto;
+}
+
+.container5 h2 {
+  text-align: left;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.container5 a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: var(--transition);
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* Adventure Log Styles */
 
 .blog {
@@ -390,7 +415,7 @@ input[type="number"] {
 #foot {
   display: flex;
   background-color: var(--secondary);
-  color: var(--background);
+  color: var(--primary);
   justify-content: center;
   align-items: center;
   clear: both;
@@ -436,8 +461,7 @@ input[type="number"] {
   margin-top: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 400px;
+  width: 40%;
   transition: var(--transition);
 }
 
@@ -499,6 +523,25 @@ form input[type="submit"] {
   font-weight: bold;
   border-radius: 4px;
   transition: var(--transition);
+}
+
+form textarea {
+  width: 100%;
+  height: 150px; /* Adjust as needed */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: var(--text);
+  transition: var(--transition);
+  resize: vertical; /* Allows resizing only vertically */
+}
+
+form textarea:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 5px var(--secondary);
 }
 
 form input[type="submit"]:hover {
