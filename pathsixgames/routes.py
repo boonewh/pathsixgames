@@ -179,3 +179,24 @@ def update_post(post_id):
 
     return render_template('post_form.html', post_form=post_form, post=post)
 
+@app.route('/post/<int:post_id>/delete', methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    # Ensure only the author can delete the post
+    if post.author != current_user:
+        abort(403)  # Forbidden
+
+    # If there's an associated image, delete it from the filesystem
+    if post.image:
+        image_path = os.path.join(current_app.root_path, 'static/images', post.image)
+        if os.path.exists(image_path):
+            os.remove(image_path)
+
+    # Delete the post from the database
+    db.session.delete(post)
+    db.session.commit()
+    
+    flash('Post deleted successfully!', 'success')
+    return redirect(url_for('book1'))
