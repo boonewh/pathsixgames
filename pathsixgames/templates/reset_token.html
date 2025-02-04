@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}PathSix Games Registration Page{% endblock %}
+{% block title %}PathSix Games Reset Password{% endblock %}
 
-{% block meta_description %}<meta name="description" content="Registration page for PathSix Games.">{% endblock %}
+{% block meta_description %}<meta name="description" content="Reset password page for PathSix Games.">{% endblock %}
 
 {% block content %}
     <main class="formMain">
@@ -25,33 +25,23 @@
                 {{ form.hidden_tag() }}
                 <fieldset>
                     <div>
-                        {{ form.email.label }}<br>
-                        {{ form.email(size=32) }}<br>
-                        {% for error in form.email.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </div>
-                    <div>
                         {{ form.password.label }}<br>
-                        {{ form.password(size=32) }}<br>
+                        {{ form.password }}<br>
                         {% for error in form.password.errors %}
                             <span style="color: red;">[{{ error }}]</span>
                         {% endfor %}
                     </div>
-                    <div class="remember">
-                        {{ form.remember() }} 
-                        {{ form.remember.label }}
-                    </div>
+                    <div>
+                        {{ form.confirm_password.label }}<br>
+                        {{ form.confirm_password }}<br>
+                        {% for error in form.confirm.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    <div>
                         {{ form.submit }}
-                    </div>
-                    <div class="question">
-                        <p>Forgot your password? <a href="{{ url_for('reset_request') }}">Reset it here</a>.</p>
                     </div>
                 </fieldset>
             </form>
-        </div>
-        <div class="question">
-            <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
         </div>
     </main>
 {% endblock %}
