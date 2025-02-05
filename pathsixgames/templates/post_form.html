@@ -14,8 +14,8 @@
     {% if not post %}
         <h1>{{ current_user.username }}</h1>
         <div class="adminLinks">
-            <a href="{{ url_for('account') }}" class="btn-link">Account</a>
-            <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+            <a href="{{ url_for('users.account') }}" class="btn-link">Account</a>
+            <a href="{{ url_for('users.logout') }}" class="btn-link">Logout</a>
         </div>
     {% endif %}
     

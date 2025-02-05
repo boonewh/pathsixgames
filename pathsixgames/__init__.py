@@ -17,4 +17,10 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 mail = Mail(app)
 
-from pathsixgames import routes
+from pathsixgames.users.routes import users
+from pathsixgames.posts.routes import posts
+from pathsixgames.winterMain.routes import winterMain
+
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(winterMain)

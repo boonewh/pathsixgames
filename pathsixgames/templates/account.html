@@ -8,8 +8,8 @@
     <main>
         <h1>{{ current_user.username }}</h1>
         <div class="adminLinks">
-            <a href="{{ url_for('dashboard') }}" class="btn-link">Create Blog</a>
-            <a href="{{ url_for('logout') }}" class="btn-link">Logout</a>
+            <a href="{{ url_for('posts.dashboard') }}" class="btn-link">Create Blog</a>
+            <a href="{{ url_for('users.logout') }}" class="btn-link">Logout</a>
         </div>
             <div class="formMain">
                 <div class="form">

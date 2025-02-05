@@ -16,10 +16,10 @@
                 <a href="#" class="navicon"><img src="{{ url_for('static', filename='images/navicon.png') }}" alt="Hamburger Navigation Icon"></a>
                 <ul>
                     <li><a href="/">Home Page</a></li> 
-                    <li><a href="{{ url_for('book1') }}">Adventure Log</a></li>
-                    <li><a href="{{ url_for('dice') }}">Dice Roller</a></li>
+                    <li><a href="{{ url_for('posts.book1') }}">Adventure Log</a></li>
+                    <li><a href="{{ url_for('winterMain.dice') }}">Dice Roller</a></li>
                     <li><a href="/">Past Adventures</a></li>
-                    <li><a href="{{ url_for('rules') }}">Rules Page</a></li>
+                    <li><a href="{{ url_for('winterMain.rules') }}">Rules Page</a></li>
                 </ul>
             </nav>
         </header>
