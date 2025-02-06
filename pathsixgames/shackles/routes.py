@@ -29,10 +29,6 @@ def book4():
 def book5():
     return render_template('shackles/adventure_log5.html')
 
-@shackles.route('/dice')
-def dice():
-    return render_template('shackles/dice.html')
-
 @shackles.route('/rules')
 def rules():
     return render_template('shackles/rules.html')

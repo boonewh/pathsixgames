@@ -14,11 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('shackles.static', filename='apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('shackles.static', filename='favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('shackles.static', filename='favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url_for('shackles.static', filename='site.webmanifest') }}">
 </head>
 
 <body class="index-only">
@@ -30,7 +25,6 @@
                 <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
                 <li><a href="{{ url_for('shackles.index') }}">Home Page</a></li> 
                 <li><a href="{{ url_for('shackles.adventure_log') }}">Adventure Log</a></li>
-                <li><a href="{{ url_for('shackles.dice') }}">Dice Roller</a></li>
                 <li><a href="{{ url_for('shackles.rules') }}">Rules Page</a></li>
                 <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
             </ul>
