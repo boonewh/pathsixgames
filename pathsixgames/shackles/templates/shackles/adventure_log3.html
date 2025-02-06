@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- March 29, 2024 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content='PathSix is a website for six friends who have been playing RPGs together for three decades. This is the main page for our current Pathfinder campaign, Skull & Shackles.'/>
+    <meta name="author" content="William Boone">
+    <title>PathSix | Skull & Shackles Rules Page</title>
+    
+    <!-- Styles & Favicon -->
+    <link rel="stylesheet" href="{{ url_for('shackles.static', filename='css/main.css') }}">
+    <link rel="icon" href="{{ url_for('shackles.static', filename='images/favicon.png') }}" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('shackles.static', filename='images/PathSixLogowhite.png') }}" alt="The Pathfinder 6" id="mainLogo">
+        <nav class="navFirst">
+            <a href="#" id="navicon"><img src="{{ url_for('shackles.static', filename='images/navicon.png') }}" alt=""></a>
+            <ul>
+                <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
+                <li><a href="{{ url_for('shackles.index') }}">Home Page</a></li> 
+                <li><a href="{{ url_for('shackles.adventure_log') }}">Adventure Log</a></li>
+                <li><a href="{{ url_for('shackles.dice') }}">Dice Roller</a></li>
+                <li><a href="{{ url_for('shackles.rules') }}">Rules Page</a></li>
+                <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
+            </ul>
+        </nav>
+    </header>
+
+		<main class="blog">
+			<h1>Tales From the High Sea!</h1>
+			<h1>Book 3: Tempest Rising</h1>
+			<br>
+            <div class="buttonsdiv">
+                <div class="dropdown">
+                    <button class="dropbtn">Select Book</button>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('shackles.book1') }}">Book 1</a>
+                        <a href="{{ url_for('shackles.book2') }}">Book 2</a>
+                        <a href="{{ url_for('shackles.book3') }}">Book 3</a>
+                        <a href="{{ url_for('shackles.book4') }}">Book 4</a>
+                        <a href="{{ url_for('shackles.book5') }}">Book 5</a>
+                        <a href="{{ url_for('shackles.adventure_log') }}">Book 6</a>
+                    </div>
+                </div>
+            </div>
+			<br>
+            <article>
+                <h2>Testing the Worth of the <i>Scourge’s Bane</i></h2>
+                <h3>July 13, 2024</h3>
+                <img src="/shackles/static/images/test_of_marque.jpg" alt="The Hurricane King's Tests" class="left">
+                <p>The crew of the <i>Scourge’s Bane</i> set sail for Port Peril with a singular purpose: to petition the Hurricane King, Kerdak Bonefist, for a letter of marque. This coveted document would officially recognize them as pirates of the Shackles, granting them legitimacy and marking their rise in power. Arriving in the chaotic and bustling port, the crew knew that gaining an audience with the Hurricane King would not be easy. They managed to secure an "appointment" through a combination of charm, reputation, and a hefty bribe. With their audience scheduled for the following morning, the crew prepared for whatever challenges lay ahead.</p>
+
+                <p>As the sun rose over Port Peril, the Hurricane King’s first mate, Tsadok Goldtooth, appeared at the docks, his arrival drawing a crowd eager to witness the proceedings. With a glint of amusement in his eye, Tsadok announced that the crew would have to prove their worth through a series of challenges. "Let’s see if these play pirates are worthy of becoming captains themselves," he jeered, his words a thinly veiled insult. The crowd murmured in anticipation as the first challenge was revealed: a race to the top of a ship’s foremast.</p>
+
+                <p>One of the heroes would race against a member of Tsadok’s crew to see who could unfurl their sail first. The rules forbade certain magics, but Kasmira, ever clever and quick, donned slippers of spider climbing—an enchantment that was not specifically prohibited. As the race began, she shot up the rigging with ease, her movements swift and calculated. Remembering to work smart, she moved from side to side, untying the knots evenly to prevent the wind from catching one side and making the other more difficult. Her strategy paid off as she quickly gained the lead.</p>
+
+                <p>As the race unfolded, Finn and Varen noticed a suspicious figure among the spectators. The man was fiddling with a line securing the forestay boom, clearly intending to sabotage Kasmira’s climb by releasing the boom to swing dangerously into the mast. Without moving a muscle, Finn used his telekinetic powers to hold the boom steady, ensuring that Kasmira’s ascent was uninterrupted. With no interference, Kasmira reached the top first and unfurled the sail, securing victory for the first challenge.</p>
+
+                <p>Next came a "friendly" game of cards against Tsadok himself, a test of wit and deception. Varen, confident in his perceptive skills, took on the challenge, sitting across from Tsadok for a round of "Bastard’s Fool." As the game progressed, Varen watched Tsadok closely, countering every attempt at cheating with his own subtle bluffs and sleight of hand. With a final flourish, Varen laid down his winning hand, taking the full purse and winning the second challenge. The crowd erupted in cheers, impressed by the crew's cunning.</p>
+
+                <p>The third and final challenge was far more dangerous than the first two: a test of combat prowess. Three giant cages were wheeled to the pier, each containing a marsh giant—a monstrous creature of formidable strength. The crew was tasked with defending their ship from the giants’ assault, a real fight that could not be taken lightly. The crowd, sensing the impending chaos, backed away as the cages were opened, and the giants lumbered out, immediately hurling boulders toward the crew. One giant conjured a thick fog that enveloped Red and Kasmira, obscuring their vision and complicating their defense.</p>
+
+                <p>From his perch in the crow’s nest, Varen began firing his musket at the spell-casting giant, each shot ringing out above the din. Kasmira, using her shadow step ability, teleported directly to the giants, her pistol blazing as she fired into their ranks. Finn coordinated the crew to fire the ship’s ballista, sending massive bolts into the fray. Red charged forward, his axe glinting in the sunlight as he met the giants in brutal melee combat. The battle was fierce, with boulders crashing and the giants’ roars echoing across the harbor. One by one, the giants fell—first to Varen’s musket, then to Kasmira’s pistol, and finally to Red’s mighty axe, each strike a testament to their skill and bravery.</p>
+
+                <p>With all three challenges completed, Tsadok stepped forward, a grudging respect in his eyes. "You lot have proven yourselves to be good sorts," he declared, turning to address the crowd. "They are indeed worthy of being pirates of the Shackles!" The onlookers erupted in applause, cheering the crew’s victory. Tsadok announced that the Hurricane King himself would bestow the letter of marque at a feast that very night. The crew of the <i>Scourge’s Bane</i> had proven their mettle, their path to becoming recognized pirates of the Shackles now firmly in sight. As they prepared for the evening’s festivities, the promise of new adventures and greater glory beckoned, their names soon to be etched among the legends of the high seas.</p>
+            </article>
+			<hr>
+			<article>
+				<h2>A Night with the Hurricane King</h2>
+				<h3>Continuation of July 13, 2024</h3>
+				<img src="/shackles/static/images/hurricane_king.jpg" alt="The Hurricane King" class="right">
+				<p>That evening, the crew of the <i>Scourge’s Bane</i> found themselves at the heart of a grand celebration, invited to the feast hosted by none other than the Hurricane King himself, Kerdak Bonefist. The hall was alive with the sounds of laughter, clinking mugs, and raucous shanties as pirates of all stripes reveled in the night's festivities. Bonefist, already deep into his cups, sat on his throne, his eyes bleary but sharp. It took him several attempts to quiet the rowdy crowd, finally resorting to firing his pistol into the air. The loud bang echoed through the room, silencing the gathered pirates. "This fresh catch of scallywags wants to add their fine ship to our brethren o’ the sea," Bonefist slurred, waving his still-smoking pistol toward the crew. "But before I award their letter of marque and make them Free Captains right and true, I say we hear from them." His gaze turned to the crew. "What say you tell us all a tale or two of how you came by the plunder in your hold?"</p>
+
+				<p>Taking a confident step forward, Kasmira began to spin a tale of the <i>Scourge’s Bane</i> and their daring exploits on the high seas. Her voice carried through the hall, weaving a story of adventure and danger. But just as the crowd was beginning to get drawn into her narrative, heckling erupted from a few unruly listeners. The jibes threatened to derail the entire effort. Kasmira remained calm, addressing the hecklers directly and firmly, but it was Finn's stealthy approach that truly quieted them. Moving unseen among the crowd, he leaned in close to each heckler, whispering threats that chilled them to their core. Realizing their lives might be on the line, the hecklers quickly fell silent.</p>
+
+				<p>With the interruptions quelled, Kasmira continued her tale, captivating the audience with her recounting of their battles and victories. The pirates in attendance hung on her every word, swept up in the excitement of her story. As she finished, Bonefist stood and called for a show of approval. The hall erupted in a hearty "Aye!" from the vast majority of the crowd. Satisfied, Bonefist presented Kasmira with an official Shackles letter of marque, declaring her and her crew true Free Captains of the Shackles. The room burst into cheers, and the feast continued with renewed vigor.</p>
+
+				<p>With their status now official, the party truly began in earnest. The crew mingled with other pirates, sharing stories and reveling in their newfound recognition. Kasmira spent much of the evening near Bonefist, carefully observing the man behind the legend. Rumors swirled throughout the room—talk of the upcoming Captain’s Regatta was on everyone's lips, as was speculation about Tessa Fairwind's growing influence and her potential challenge to Bonefist’s rule. Whenever the Hurricane King was out of earshot, whispers of plots and intrigue filled the air. Kasmira listened closely as Bonefist himself muttered about conspiracies and threats to his position, revealing a paranoid edge to the feared pirate king.</p>
+
+				<p>The next day, eager to capitalize on their momentum, the crew set out to meet with Tessa Fairwind, who they had heard was currently at her townhouse in Port Peril. As they made their way through the bustling streets, they spotted a familiar face. Caulky Taroon, the former cabin girl from the <i>Wormwood</i>, slipped into a nearby tavern just as the crew approached. Sensing an opportunity, they followed her inside and took a seat at a table near the door, curious to see what she was up to.</p>
+
+				<p>Almost immediately, they were approached by Pierce Jerrell, a fellow Shackles captain, who sat down at their table, ordering drinks and striking up a conversation. The crew accepted his hospitality but kept their eyes on Caulky, noticing her furtive movements as she slipped something into the drinks of unsuspecting patrons. It seemed that the <i>Wormwood</i> was once again recruiting in their usual underhanded fashion. Suddenly, one of the patrons noticed something was amiss with his drink. His face twisted in anger, he demanded to know who had tried to poison him. In a fit of rage, he hurled his drink across the bar, splashing others with the tainted liquid and striking another customer with the cup. The tavern erupted into chaos as a full-blown brawl broke out.</p>
+
+				<p>Determined to keep an eye on Caulky, the officers of the <i>Scourge’s Bane</i> tried to avoid getting caught up in the melee. Varen, thinking quickly, cast a massive web across the center of the tavern, hoping to slow down the frenzied brawlers. As Varen backed against the front wall, Finn took advantage of the distraction, turning invisible and flying to the open walkway on the second floor, ready to intercept Caulky as she fled up the stairs. Kasmira used her shadow step ability to position herself behind Caulky, anticipating her path. Red, meanwhile, did his best to push through the crowd toward the back of the tavern but was quickly caught in the thick of the fight. Brawlers lunged at both Varen and Red, forcing Varen to fire his musket in frustration. The shot echoed loudly, and taking it as a cue, Red drew his axe and began swinging. The sudden violence changed the mood of the tavern, and the brawl turned deadly.</p>
+
+				<p>Seeing the escalation, Varen took a commanding stance, shouting for everyone to stand down or face the consequences. Simultaneously, Red cast a blinding light above his head, his booming voice adding weight to the demand for order. The combined threat of violence and magic caused the crowd to pause, uncertainty written on their faces. At that moment, Finn, still invisible, caught up with Caulky and knocked her unconscious with a swift, calculated strike. Kasmira stepped forward, quickly shackling Caulky with magical restraints to ensure she wouldn’t escape. Finn, now visible again, decided to make a show of force, gathering his magical energy into a visible display and releasing it with a deafening thunderclap.</p>
+
+				<p>The tavern-goers, now thoroughly stunned and intimidated, stood frozen as Finn descended the stairs. He calmly placed a pouch of 100 gold pieces on the bar and declared, "A round for everyone!" before turning to leave. The rest of the crew followed him out, the brawl having deflated completely in the wake of their display. With Caulky in tow, they returned to the <i>Scourge’s Bane</i>, ready to question her when she awoke. The events of the day had only strengthened their resolve, and they were more determined than ever to carve their path in the pirate-infested waters of the Shackles.</p>
+			</article>
+			<hr>
+            <article>
+                <h2>An Alliance with Tessa Fairwind</h2>
+                <h3>July 20, 2024</h3> 
+                <img src="/shackles/static/images/tessa_fairwind.jpg" alt="Tessa Fairwind, Pirate Lord of Quent" class="left">
+                <p>The crew of the <i>Scourge’s Bane</i> finally made their way to the townhouse of Tessa Fairwind, the influential Pirate Lord of Quent. Upon arrival, they were quickly ushered in and greeted by Tessa herself. She welcomed them warmly, congratulating them on securing their letter of marque and officially becoming Free Captains of the Shackles. Food and drink were served as they settled in, and the conversation turned to current events.</p> 
+                
+                <p>During their discussion, Tessa addressed the rumors swirling around Port Peril—rumors that suggested she was positioning herself against the Hurricane King, Kerdak Bonefist. She admitted that while she had no personal desire to seize the throne, she was aware of the Hurricane King's weakening grip on power. She emphasized the importance of gathering allies and being prepared for whatever might come next.</p> 
+                
+                <p>Shifting the conversation, Tessa revealed why she had been eager to meet with the officers of the <i>Bane</i>. She explained that she had been hearing disturbing whispers—subtle, almost insignificant on their own, but when pieced together, they painted a picture of Cheliax preparing to make a move on the Shackles once again. Tessa confided that she was too prominent a figure to investigate such matters quietly, but the crew of the <i>Scourge’s Bane</i>, being new and relatively unknown, might succeed where she could not.</p> 
+                
+                <p>She then offered the crew an alliance, inviting them to join her fleet and fly her banner. In return, she asked them to investigate the rumors of Cheliax spies in the region. The crew agreed, recognizing the value of aligning with such a powerful figure. Tessa smiled, handing them a set of beautifully drawn nautical charts of the Shackles, known as the "charts of the fair winds."</p> 
+                
+                <p>"There are two places you might be able to get information," Tessa said, pointing to the map. "The first is the House of Stolen Kisses in Quent, and the second is the Temple of the Hidden Name in Beachcomber. If there are any Cheliax spies, they might be known to one of these places." She provided them with a note sealed with her crest and the name of her contact in the House of Stolen Kisses. "As for the Temple of the Hidden Name, you’re on your own. I’ve never dealt with them directly, but I trust you can handle it."</p> 
+                
+                <p>The crew set sail for Quent, eager to follow up on their first lead. Upon arrival, Tessa’s letter granted them immediate access to the House of Stolen Kisses, a temple dedicated to the goddess Calistria. They were received by the high priestess, Dindreann, who listened carefully to their story and request for information. Dindreann confirmed that the House had leads on Cheliax spies, but the secrets held by the temple were not given away freely. She proposed a deal.</p> <p>Dindreann explained, "A ship owned by the temple, the <i>Lady’s Sting</i>, recently went missing. Divinations have revealed that it was attacked by wreckers—pirates who lure ships into dangerous waters to salvage the wrecks. The ship was carrying a relic sacred to us—a gold-plated wasp statue known as the Golden Vespal. If you can find these wreckers, avenge our loss, and return the Golden Vespal, we will provide the information you seek." She also mentioned that the Temple of the Hidden Name in Beachcomber might have information about these wreckers.</p> 
+                
+                <p>With this new task before them, the crew set sail for Beachcomber, eager to uncover more clues about both the missing ship and the elusive spy ring.</p>
+            </article>
+			<hr>
+			<article>
+				<h2>The Search for the Lady’s Sting</h2>
+				<h3>Continuation of July 20, 2024</h3> 
+				<img src="/shackles/static/images/fighting_wreckers.jpg" alt="Fight the Wreckers on the Scourge's Bane" class="right">
+				<p>Arriving in Beachcomber, the crew of the <i>Scourge’s Bane</i> began their search for the Temple of the Hidden Name, a clandestine organization rumored to be located somewhere in the Lurker District. After some careful inquiries and veiled conversations, they discovered the temple’s location—disguised as a nondescript warehouse. Knocking discreetly on the door, they were met by a halfling dressed as a humble servant. He beckoned them inside.</p> 
+				
+				<p>Once inside, the halfling introduced himself as “Slip” and guided them to a soundproofed room at the back of the warehouse. "Welcome to the Temple of the Hidden Name," he said, his voice smooth and unassuming. Slip listened to their request for information regarding the Cheliax spy ring and the missing ship, the <i>Lady’s Sting</i>. He smiled, indicating a willingness to trade information.</p> 
+				
+				<p>"There is a ship, the <i>Brine Banshee</i>, that disappeared several months ago," Slip began. "It was known for its incredible speed and maneuverability—traits many believed were due to powerful magic woven into the ship. If you can uncover what happened to the <i>Brine Banshee</i> and learn the secret of its speed, I will share what I know about the spy ring and the wreckers you seek." He revealed that the <i>Brine Banshee</i> had last been seen in Quent, suggesting that the House of Stolen Kisses might have more details about its fate.</p> 
+				
+				<p>Kasmira, visibly frustrated, mentioned that the House had already sent them to the temple to learn more about the missing <i>Lady’s Sting</i>. Slip, sensing their exasperation, offered a compromise. "Ah, the <i>Lady’s Sting</i>? I do have some information that might alleviate your frustrations," he said. "But first, a small exchange. Tell me, what was the name of your ship before it became the <i>Scourge’s Bane</i>?"</p> 
+				
+				<p>Kasmira, raising an eyebrow, replied, "The <i>Motley</i> was its name before." Not really a deception since Kasmira had discovered it was the <i>Motley</i> before it was the <i>Man's Promise</i>. Satisfied with the answer, Slip nodded and divulged that a crew had recently boasted about taking down a Calistrian vessel matching the description of the <i>Lady’s Sting</i>. Armed with this new lead, the crew thanked Slip and set a course for the Rampore Isles, where the wreckers' crew was rumored to be hiding.</p> 
+				
+				<p>Deciding to lure out the wreckers, the officers of the <i>Bane</i> sailed around the islands, posing as an easy target for the pirates. Their plan worked. Later that day, the lookout spotted a small Rahadoumi merchant ship anchored near the coast of one of the islands. As soon as the <i>Bane</i> was spotted, the merchant ship began raising its sails and anchor, clearly intending to flee. Kasmira immediately ordered a pursuit, but something felt off. The water ahead looked strange—its color mismatched and the waves unnaturally calm in some areas. Realizing they were looking at an illusion, the crew shattered the magic, revealing a hidden reef directly in their path. Kasmira quickly turned the wheel, narrowly avoiding disaster.</p> 
+				
+				<p>Knowing they had been discovered, the wreckers moved to attack. Sensing more magic in the air, Kasmira pulled out Svingli’s Eye, a magical astrolabe that could pierce through illusions and invisibility. Just in time, she spotted an invisible figure flying towards the <i>Bane</i>. "The captain of the wreckers," she thought, raising her pistol and taking a shot at the figure as she shouted a warning to her crew.</p> 
+				
+				<p>The illusion had hidden the wrecker's ship, but now they were preparing to attack. Varen immediately opened fire on the visible pirate crew, knowing they would have to deal with them as well. Suddenly, a dense fog rolled over the deck, obscuring everything—a spell from the flying attacker. Kasmira shadow-stepped into the rigging, but the magic from Svingli’s Eye had already faded, and she lost sight of the caster. An unnatural wave of fear washed over the crew, sending Rosie fleeing in panic, followed by a massive wall of fire that roared to life along the deck, catching several crewmembers off guard.</p> 
+				
+				<p>Staying composed, Sandara cast a spell to purge invisibility within her vicinity. Though the initial sweep showed nothing, she continued running toward the bow, her instincts guiding her. Suddenly, the flying mage became visible again, their invisibility purged by Sandara’s spell. Enraged, the mage lashed out at Sandru, but the attack missed. Finn, using his telekinetic powers, and Varen, with his musket ready, coordinated their assault. The combined force of Finn’s magic and Varen’s musket fire brought the attacker crashing down to the deck.</p> 
+				
+				<p>Seeing their leader fall, the remaining pirates quickly surrendered, begging for mercy and promising to reveal the location of their hidden treasure. True to their word, the wreckers led the crew of the <i>Scourge’s Bane</i> to a hidden cache of loot. Among the treasure, they found the Golden Vespal statue. With their task complete, they could now return to the House of Stolen Kisses and uncover the information they sought about the Cheliax spies.</p>
+			</article>
+			<hr>
+			<article>
+				<h2>Searching for the Ring of the Iron Skull</h2> 
+				<h3>July 27, 2024</h3> 
+				<img src="/shackles/static/images/dryads_grave.jpg" alt="Before the battle with the Dryad's Grave" class="left">
+				<p>With the Golden Vespal statue safely in hand, the crew of the <i>Scourge’s Bane</i> returned to the House of Stolen Kisses to claim their reward. High Priestess Dindreann was true to her word, offering the crew vital information in exchange for the statue’s return. She directed them to a scrimshander in Drenchport named Jaymiss Keft. "He claims to know of a spy operating in the Shackles," Dindreann informed them. But that wasn’t all. She also mentioned a retired ship’s doctor named Haneilius Fitch, living in the port of Ollo. "Fitch claims to have the means to find the <i>Brine Banshee</i> and has been seeking someone to fund an expedition." Armed with these leads, the crew decided to head to Ollo first and investigate Fitch's claims.</p> 
+
+				<p>Upon arriving in Ollo, the crew found Fitch to be a cautious and guarded man. He was initially reluctant to speak, suspicious of their intentions, but Finn, with his silver tongue, managed to convince him that their goals aligned. Eventually, Fitch agreed to share what he knew. He revealed a curious item—a glass tube containing a human leg bone.</p> 
+				
+				<p>"This tibia belonged to Vargus Brack, a former officer aboard the <i>Brine Banshee</i>," Fitch explained. "I amputated his leg to save him from gangrene, and it turns out to be quite useful now. Vargus was aboard the <i>Brine Banshee</i> when it vanished. He visited me just before their final voyage, telling me the course they would take. I believe that, with this leg bone, I can help you locate the wreck. However, to track it down, you’ll need a special item—something called the 'Ring of the Iron Skull.' Unfortunately, that ring is in the hands of a pirate named Milksop Morton, who regularly sails his sloop, the <i>Dryad’s Grave</i>, between the Smoker and Shark Island."</p> 
+				
+				<p>Fitch made a deal with the crew. In exchange for an equal share of the treasure from the <i>Brine Banshee</i>, he would guide them along its last known course once they had obtained the ring. Fitch didn't care about magic items; he only wanted enough gold to retire comfortably. With the agreement in place, the crew learned that the <i>Dryad’s Grave</i> was due to sail into Ollo within the next week. If they could intercept it before it reached port, they would have a chance to take the ring.</p> 
+				
+				<p>The next morning, the <i>Scourge’s Bane</i> set sail, positioning themselves to ambush the <i>Dryad’s Grave</i> along its route. Sure enough, just a day’s sail southeast of Ollo, they spotted the sloop on the horizon. As the two ships drew closer, Milksop Morton raised a parley flag, a white flag with a black skull and crossbones. Kasmira, always wary, ordered the crew to stand down and signaled her willingness to hear what the pirate had to say.</p> 
+				
+				<p>Milksop called out from across the water, asking about their destination and allegiances. Kasmira responded, claiming an alliance with Tessa Fairwind, but Milksop’s expression showed clear skepticism. Seeing the <i>Scourge’s Bane</i> as an easy mark, Milksop’s smile twisted. "I’ll be needing a toll for sailing in me territory," he drawled. But before the words were fully out of his mouth, Finn gave the order to fire. The <i>Bane’s</i> cannons roared to life, and both crews sprang into action.</p> 
+				
+				<p>The fight was not just between sailors. The figurehead of the <i>Dryad’s Grave</i>, a satyr carved from wood, suddenly came to life—a magical construct called a “ship’s sentinel.” As the battle began, the animated figurehead picked up a ballista and fired a bolt attached to a chain, which slammed into the hull of the <i>Bane</i>. The satyr began pulling the chain, dragging the two ships closer together. Meanwhile, the <i>Dryad’s Grave</i>’s crew launched catapult grapnels that scurried across the <i>Bane</i>’s deck like spiders, anchoring themselves to drag the ships into boarding range.</p> 
+				
+				<p>As the ships closed, the <i>Dryad’s Grave</i> fired a springnal, raining arrows down near the helm, striking Red. A caster aboard the enemy ship added to the chaos, hurling a fireball into the middle of the <i>Bane</i>’s deck, sending several crew members scrambling. But the officers of the <i>Bane</i> were prepared for a fight.</p> 
+				
+				<p>Finn turned invisible and flew to the <i>Dryad’s Grave</i>, ready to disrupt the enemy crew. Red, undeterred by his wound, began cleaving through the animated grapnels with his axe, while Varen took aim at the enemy caster, dropping them with a well-placed musket shot. Kasmira, using her shadowstep ability, teleported to the deck of the <i>Dryad’s Grave</i>, directly behind Milksop Morton. The pirate captain had just cast a spell to create a magical barrier, but before he could react, Kasmira fired her pistol, ending his fight.</p> 
+				
+				<p>With Milksop dead, Varen turned his attention to the satyr construct as it attempted to board the <i>Bane</i>. His musket cracked again, and the enchanted figurehead crumbled to the deck. The remaining grapnels fell limp, and with their leader gone, the crew of the <i>Dryad’s Grave</i> quickly surrendered. Kasmira retrieved the Ring of the Iron Skull from Milksop’s lifeless hand, and the crew of the <i>Scourge’s Bane</i> sailed back to Ollo, ready to begin their search for the <i>Brine Banshee</i> and the treasure it held.</p>
+			</article>
+			<hr>
+			<article>
+				<h2>The Secrets of the Brine Banshee</h2> 
+				<h3>August 3, 2024</h3> 
+				<img src="/shackles/static/images/brine_banshee.jpg" alt="The wreck of the Brine Banshee with aggressive jellyfish attacking Kasmira." class="right">
+				<p>The <i>Scourge’s Bane</i> cut through the waves, its crew following the directions of Fitch, sailing northwest from Ollo. As they passed the straight between Shark Island and Raptor Island, Fitch’s gravelly voice spoke again, “The <i>Brine Banshee</i> headed north-northwest, hunting for merchant ships.” Hours passed, the anticipation on board rising with each creak of the ship. Then, the <i>Ring of the Iron Skull</i> began to hum, a low, haunting melody that vibrated through their bones—the <i>Brine Banshee</i> was near.</p> 
+				
+				<p>With preparations complete, Red drank a potion of water breathing, and Sandara cast a waterproofing spell on Kasmira’s beloved pistol. Without hesitation, the officers dove into the depths, their eyes adjusting to the shifting blue as they descended. Shadows swirled beneath them—bull sharks, circling ominously. Their fins sliced through the water, agitated, one suddenly darting deeper into the dark below.</p> 
+				
+				<p>The group pressed on, steeling themselves for what lay ahead. But when the shark returned, it brought company. A merfolk warrior, trident gleaming in hand, surged up from the deep, the sharks rallying at his command. With a swift motion, he gestured, casting a spell that stripped Red of his water-breathing ability, leaving him struggling without air.</p> 
+				
+				<p>The sharks attacked in a frenzy. Varen and Kasmira were both hit with vicious bites, blood clouding the water. Red quickly downed another potion as Varen, determined to stop the caster, leveled his musket. The shot rang out, even beneath the sea, finding its mark in the merfolk’s chest. Kasmira’s pistol rang out as well, but moments later, the merfolk’s magic rendered it useless with another dispel cancelling the waterproof spell on it. Gritting her teeth, she drew her cutlass and charged forward.</p> 
+				
+				<p>Varen, resolute, fired again, killing the merfolk with a well-placed shot. Red’s mighty axe cleaved through one of the sharks, while Finn’s telekinetic powers crushed another. The remaining sharks, sensing their defeat, scattered into the abyss.</p> 
+				
+				<p>As the crew descended further, the wreck of the <i>Brine Banshee</i> came into view, or at least half of it. The bow rested on a precipice, but beyond, the seafloor dropped away into a dizzying void. The <i>Ring of the Iron Skull</i> pulsed in Kasmira’s hand, indicating that deeper—120 feet below, the stern of the ship and their prize awaited. But first, they explored the half before them.</p> 
+				
+				<p>Swimming cautiously into the wreck, they found remnants of the ship’s treasure, but before they could claim their prize, two massive jellyfish emerged from the gloom. Kasmira was first to encounter them, swimming down the stairwell, only to be met by the creatures’ venomous tendrils. The poison struck her hard, weakening her with every heartbeat.</p> 
+				
+				<p>Finn and Red rushed in behind her, but the narrow stairwell forced Varen to wait his turn. The jellyfish attacked Kasmira relentlessly, forcing her to retreat. Red moved swiftly to heal her, while Varen finally took his place, musket blazing. Together, they fought back the monstrous jellyfish, but the poison continued to sap Kasmira’s life.</p> 
+				
+				<p>Realizing the gravity of her condition, the group retreated to the surface, giving Red and Sandara time to heal Kasmira fully. By morning, she was back on her feet, and the crew was ready to dive once more to the depths where the true prize awaited.</p> 
+				
+				<p>Protected by magical wards from the cold and pressure of the deeper waters, they plunged into the abyss. Darkness surrounded them as they descended, when suddenly, a colossal creature surged from below—a Charda, its enormous size defying all expectations. Finn reacted first, launching a telekinetic blast that hit the beast squarely. In response, the Charda spewed a cloud of freezing black bile, catching Red and Varen in its icy grasp.</p> 
+				
+				<p>Unfazed, Finn struck again, but the creature retaliated with a savage slash. Varen swam forward, musket ready, and with a single, precise shot, the Charda was slain. As its massive form drifted down into the deep, the crew pressed on.</p> 
+				
+				<p>The stern of the <i>Brine Banshee</i> loomed before them, offering shelter from the dangers of the deep, but its twisted timbers held their own perils. Kasmira, swimming ahead, was suddenly snared by a giant anemone, its tentacles wrapping around her with terrifying speed. The group rallied, hacking at the creature until it finally released her. But as they ventured deeper into the wreck, they realized something was wrong.</p> 
+				
+				<p>A wall blocked their way, where there should have been none. As they moved closer, it shimmered, and the illusion broke. Beyond the wall, another illusion—a massive shark hurtling toward them. Kasmira’s cutlass slashed through it, and it disappeared. Then they saw the truth—a cunning Aboleth, its alien form lurking in the shadows, weaving its illusions to confuse and disorient them.</p> 
+				
+				<p>Varen fired at the Aboleth, but the bullet passed through, revealing yet another illusion. Kasmira, quick on her feet, shadow-stepped behind the real Aboleth, her cutlass flashing in the dim light of the deep. Varen fired again, this time striking true, and with a final, gurgling roar, the creature was defeated.</p> 
+				
+				<p>With the Aboleth dead, the crew explored the wreck unhindered, their reward waiting within. Among the treasures, they found <i>Jalhazar’s Wheel</i>—the secret to the <i>Brine Banshee’s</i> legendary speed and agility. The crew of the <i>Scourge’s Bane</i> had not only found their prize but discovered a powerful new tool for their own ship. With the wheel in hand, not only could they return to Slip and repay their debt, but the possibilities for the <i>Scourge’s Bane</i> were now limitless.</p>
+			</article>
+			<hr>
+			<article>
+				<h2>Unmasking the Shadows</h2> 
+				<h3>August 10, 2024</h3> 
+				<img src="//shackles/static/images/the_assassin.jpg" alt="An assassin skulks in the night" class="left">
+				<p>With the secret of the <i>Brine Banshee</i> delivered to Slip at the Temple of the Hidden Name, the crew of the <i>Scourge’s Bane</i> wasted no time in setting their sights on their next objective—uncovering the Chelaxian spies that Tessa Fairwind had warned them about. Their journey took them north to Drenchport, where a scrimshander by the name of Jaymiss Keft was said to hold the key to their next lead.</p> 
+				
+				<p>Once in the bustling port, the crew split up, their inquiries leading them to Carver’s Hall, where scrimshanders etched intricate designs into whale bones and tusks. Kasmira approached Jaymiss, but the man barely offered her a sideways glance, clearly wary. It wasn’t until Kasmira bought him a drink and made small talk about scrimshaw that his icy demeanor thawed. Finally, Keft leaned in, lowering his voice. “Haydon Pike,” he said. “A smuggler who hasn’t been smuggling lately. Making strange trips south with no cargo.” He gave them directions to Pike’s cottage, a lone building on the edge of town.</p> 
+				
+				<p>The crew approached the cottage cautiously, knocking on the door, but no answer came. Finn and Red circled around back, while Kasmira tested the front door’s lock. Finn reached the rear first, spotting an open window. Glancing inside, his eyes fell upon a chilling sight—a body, face down, a bolt lodged in its back. Red’s grim expression mirrored Finn’s as they signaled to Kasmira.</p> 
+				
+				<p>Kasmira swiftly picked the lock, the door creaking open. Inside, the scene was worse than expected. The body lay slumped over a fish tank, its face gruesomely eaten by the very piranhas it once cared for. Whoever had killed Pike had gotten to him first, but why? Searching the corpse, they found a carved Tengu clutched in Pike’s lifeless hand. In the tank's base, Finn discovered a hidden compartment, revealing a scroll case filled with sheet music—an opera from Cheliax. A clue, no doubt, but one that raised more questions.</p> 
+				
+				<p>Returning to Jaymiss with the carved Tengu, the scrimshander paled. “Corlan,” he muttered, mentioning a Tengu associate of Pike’s who lived in Hell Harbor. The crew wasted no time setting sail once more, determined to follow this new lead.</p> 
+				
+				<p>Arriving in Hell Harbor, the air thick with the scent of salt and smoke, the crew split up again. Kasmira scouted the taverns, quickly finding someone who pointed them to Corlan’s residence. This time, they approached with greater caution, sensing danger in the air. Red and Finn flanked the building, while Varen positioned himself across the street as a lookout. Kasmira knocked on the door.</p> 
+				
+				<p>A Tengu opened it, his expression guarded, but before a word could be spoken, a bolt whistled through the air, striking him in the chest. Kasmira's eyes widened in shock as Corlan crumpled to the ground. Another bolt followed, sealing his fate. Varen spun around, musket in hand, his keen eyes catching the silhouette of the assassin atop a roof.</p> 
+				
+				<p>Without hesitation, Varen fired a shot, the musket’s crack echoing through the street. His form blurred as he phase-stepped onto the rooftop, closing the distance. Finn, using his telekinetic powers, flew toward the assassin, while Red rushed to shield Kasmira, knowing more bolts could follow. The assassin, hearing Varen’s boots behind him, whirled around, loosing another bolt that struck Varen in the shoulder.</p> 
+				
+				<p>Ignoring the pain, Varen fired again, and Finn’s telekinetic blade found its mark. The assassin staggered, bloodied but still standing. With a grim determination, the assassin stepped back, dropping off the roof and crashing hard onto the street below. Varen followed to the edge, his musket barrel aimed downward. Another shot rang out as Finn, now invisible, descended to the ground.</p> 
+				
+				<p>Kasmira wasted no time. She darted forward, pinning the assassin to the cobblestones. But the man, desperate, wrestled free. In his panic, he failed to notice Finn, still invisible, standing right beside him. It was his last mistake. With a swift strike, Finn ended the assassin’s life.</p> 
+				
+				<p>Not wanting to attract unwanted attention, the crew dragged both Corlan and the assassin into the Tengu’s apartment. Searching the assassin’s body, they found a slip of paper—three names and an order to report to the Jasperleaf Apothecary in Port Peril. The note was signed with a single, ominous letter: “Z.”</p> 
+				
+				<p>Red’s holy magic brought Corlan back from the darkness of death, the Tengu gasping for breath as life returned to his body. Grateful, he explained that he was merely a messenger, taking orders from a woman named Zarskia Galembar. Red turned his attention to the assassin’s corpse, attempting to speak with the dead through divine means, but the man’s soul resisted, unwilling to reveal its secrets.</p> 
+				
+				<p>Undeterred, Red used his magic to raise the assassin from the dead, the mercenary now compliant, realizing his second chance at life was a rare gift. He confirmed what they feared—it was he who had killed Pike, along with another target, a woman named Roweena, whose body he had dumped at sea. Zarskia Galembar, he revealed, was the mastermind behind it all, running her operations from the Jasperleaf Apothecary in Port Peril. He even provided them with the password needed to enter.</p> 
+				
+				<p>Deciding to spare the assassin’s life, they left him on a deserted island, giving him a chance to start anew. As for Corlan, the Tengu, he begged to stay with the crew, fearful of what might come after him next. Seeing no harm in it, they agreed.</p> 
+				
+				<p>With the puzzle pieces falling into place, the crew of the <i>Scourge’s Bane</i> turned their gaze toward Port Peril. Zarskia Galembar would soon face the consequences of her deceit, and the Chelaxian spy ring was about to unravel at their hands.</p>
+			</article>
+			<hr>
+			<article>
+				<h2>Shadows in Port Peril</h2>  
+				<h3>August 17, 2024</h3>
+				<img src="/shackles/static/images/zarskia_galembar.jpg" alt="Zarskia Galembar, the mastermind behind the Chelaxian spy ring" class="right">
+				<p>The crew of the <i>Scourge’s Bane</i> sailed to Quent, eager to report their findings to Tessa Fairwind. She listened intently, nodding as they recounted their discoveries. “This is solid information,” she admitted, “but I need more than the word of a hired assassin. You’ll need to go to the apothecary in Port Peril.” With a new sense of purpose, they set course for the infamous pirate city.</p>  
+
+				<p>Upon their arrival, they headed straight for the Jasperleaf Apothecary. Armed with the password they had gleaned from the assassin, they knocked on the door. “We’re closed,” a rough voice called from within. Kasmira responded with the password, and after a tense pause, the door creaked open. They were ushered inside and led to a posh meeting room, where the bricked-over fireplace immediately caught Varen’s attention.</p>  
+
+				<p>Varen, ever cautious, cast a spell of x-ray vision, revealing a shaft hidden behind the bricks that led down to the basement. Moments later, a woman entered. “Hello, guests. I am Zarskia,” she said smoothly. “I understand you’re here on business. How may I assist you?” Kasmira stepped forward, her voice calm but confident. “We’ve completed the assassinations you ordered and have come to collect payment.”</p>  
+
+				<p>Zarskia frowned, confused. “I don’t understand what you mean. Where is Giles Halmis, the man I hired?” “Dead,” Kasmira replied coolly, “but we finished the job in his stead.” She showed Zarskia the paper with the names of the targets. Zarskia’s frown deepened, suspicion clouding her face. “I see you have the proof. Wait here while I gather your payment.”</p>  
+
+				<p>The crew agreed to wait, but as Zarskia left the room, Varen quickly signaled Finn. “Follow her, invisibly,” Varen whispered. Finn quickly disappeared from view and with a touch on Finn’s shoulder, Varen cast a spell that teleported Finn 20 feet into the hallway behind Zarskia. Moving quickly, Finn followed her through the labyrinthine corridors of the apothecary. Zarskia moved with purpose, ascending a set of stairs and disappearing into a room, the door closing behind her.</p>  
+
+				<p>Pausing to listen, Finn decided to press on. He opened the door cautiously, finding the room empty, save for a trap—something had been smeared on the next door’s knob. Cleverly using a cloth to avoid the trap, Finn continued through the apothecary, eventually finding a hole in the ceiling where a ladder had been pulled up. Zarskia had climbed to the third floor. He flew up carefully, but the room above was also empty. Zarskia was one step ahead.</p>  
+
+				<p>Finn searched through the top floor, making his way into the master bedroom. Suddenly, a loud boom echoed from below. The entire building seemed to shudder. Finn glanced down the chimney shaft and realized the fireplace was hollow, a hidden passage leading to the basement. He descended quickly, discovering a sealed-off room. Papers on a table still smoldered, and the acrid scent of smoke filled the air—Zarskia had bombed the place to cover her escape.</p>  
+
+				<p>Upstairs, the guards were in a frenzy. Weapons drawn, they burst into the meeting room. The lead guard immediately noticed something was amiss. “Where’s the other one?” the lead guard demanded, realizing Finn was gone. Kasmira, always quick on her feet, played dumb. “There are only three of us,” she said, feigning innocence. The guards, unable to locate anyone else, grew increasingly frustrated. After a fruitless search, the lead guard barked, “Get out! The apothecary is closed!”</p>  
+
+				<p>Outside, Kasmira feared the explosion might have hurt Finn—or worse. She turned to Varen. “Check the building, see if you can find him.” Varen cast an invisibility spell and used his slippers of spider climb to scale the apothecary’s walls, peeking through windows as he went. But there was no sign of Finn. Disheartened, the group returned to the ship, only to find Finn waiting for them on deck, a grin on his face.</p>  
+
+				<p>“I found some papers,” Finn said, producing a leather bag with documents inside. As the crew pored over them, they realized Zarskia had been meticulously recording the movements of the Pirate Council, marking mysterious symbols next to each name. Whatever Zarskia’s plan had been, it was clear now that the crew had uncovered something far more dangerous.</p>  
+
+				<p>Deciding to return to the apothecary under cover of darkness, the crew climbed onto the roof and descended the chimney into the building. Their search led them to the top floor, where they found a room filled with large, menacing plants—and a corpse that Varen identified as a dead babau demon. Red knelt by the body, frowning. “Something burrowed its way out of this thing’s chest,” he muttered. Before they could investigate further, the plants moved, let out a loud screech and attacked!</p>  
+
+				<p>The guards below heard the commotion, their shouts echoing up the stairwell. The plants bit into Red and Varen, but Red’s axe cleaved through one, while Varen’s musket shredded the other. As the guards stormed up the stairs, Finn tossed a vial of alchemist fire, the flames erupting and blocking the guards' path.</p>  
+
+				<p>“Time to go!” Finn shouted, but as the smoke thickened, he heard a noise—a cat’s distressed yowl. “Well, hell,” he muttered, moving toward the sound. Throwing open a door, he expected to find an animal in need of rescue. Instead, he was met by a monstrous creature—a large panther-like black cat with tentacle-like snakes sprouting from its shoulders. “Nope!” Finn exclaimed, slamming the door shut. “Time to go!”</p>  
+
+				<p>The group made their escape, returning to the ship with the information they had gathered. Back in Quent, Tessa was pleased with their findings, especially the intel on Zarskia’s spy network. As they debriefed, Tessa smiled mischievously. “So,” she asked, “are you going to participate in the Captain’s Regatta coming up? The prize is an island of your own—and a seat on the Pirate Council.”</p>
+			</article>
+			<hr>
+			<article>
+				<h2>The Free Captains' Regatta</h2>  
+				<h3>August 24, 2024</h3>  
+				<img src="/shackles/static/images/free_captains_regatta.jpg" alt="The Free Captains' Regatta" class="left">
+				<p>The Free Captains' Regatta, a legendary race in the Shackles, was more than just a test of speed—it was a trial by fire. Every captain who entered knew the risks: perilous waters, unpredictable storms, and treacherous reefs, all within the shadow of the deadly Eye of Abendego. But for the brave—or foolish—willing to risk it all, the reward was more than worth the danger. The winner would not only claim a hefty purse and an island of their own but also earn a coveted seat on the Pirate Council.</p>
+
+				<p>As the fleet gathered at Cauldron Rock, anticipation crackled in the air like the distant storms that loomed on the horizon. The crew of the <i>Scourge’s Bane</i> stood ready, their ship prepped for the grueling race ahead. The infamous druid-pirate, Master of the Gales, presided over the event, his weathered skin and windblown hair marking him as one who lived in tune with the sea's violent moods. He laid out the course—an unforgiving gauntlet that would take the ships along the fringes of the Eye itself. "This is a race," his cold voice echoed. "Not a battlefield. Any who attack their competitors will face the wrath of the sea… and me." His warning lingered, as if carried by the winds themselves.</p>
+
+				<p>Back on the <i>Scourge’s Bane</i>, Kasmira and her crew huddled over charts, plotting their path through the hazards they knew, and preparing for the dangers they didn't. The Eye of Abendego was unpredictable, and any misstep could cost them everything. Yet, they were undeterred—this was their chance to claim victory, and they wouldn’t let it slip away.</p>
+
+				<p>At dawn, the fleet assembled. Familiar ships loomed among the competitors—the <i>Albatross</i>, <i>Barnacled Bitch</i>, and the notorious <i>Wormwood</i>, captained by none other than their nemesis, Barnabas Harrigan. As the ships jockeyed for position, the Master of the Gales raised his arms atop the cliffs of Cauldron Rock. A bolt of lightning split the sky, slamming into the surf below—a fitting signal for the chaos that followed. In an instant, the wind shifted violently, throwing ships off course, and confusion spread through the fleet like wildfire.</p>
+
+				<p>The <i>Scourge’s Bane</i> leaped forward under Kasmira’s steady hand, cutting through the turmoil. Two ships boxed them in, threatening to crush them in the frenzy, but Kasmira drew on the power of their magical wheel, yanking the ship hard to port. The hull groaned as they skimmed past the <i>Redcap</i>, mere inches from disaster, before bursting free into open waters. The crew cheered—they were one of the first to escape the chaos.</p>
+
+				<p>Their first obstacle, the treacherous sandbars known as the Silted Shrouds, loomed ahead. The constant churn of the Eye made these waters a shifting nightmare, but with Varen high in the crow’s nest, Finn at the bow, and Red ready to relay orders, the <i>Bane</i> navigated through the treacherous waters, emerging unscathed. But there was no time to rest. Varen’s sharp eyes spotted another danger—uncharted reefs hidden among the Raker Shoals. With a mix of skill and luck, Kasmira guided the ship through, the crew working in perfect harmony to keep the ship on course.</p>
+
+				<p>The next challenge was Iris’s Splinters—two jagged spires of rock rising from the sea, leaving only a narrow gap to sail through. As they approached, disaster struck ahead. A monstrous dragon turtle erupted from the depths, capsizing a smaller sloop and sending its crew screaming into the water. The massive beast thrashed wildly, but Kasmira, with her unshakable focus, steered the <i>Bane</i> through the Splinters, keeping a safe distance while the dragon turtle turned its wrath on another unfortunate ship. The crew exhaled in relief as they passed through untouched.</p>
+
+				<p>But the worst was yet to come. As the <i>Scourge’s Bane</i> approached the fringes of the Eye of Abendego, the seas rose in fury. Towering waves crashed over the deck, drenching the crew as they fought to keep control. Then, without warning, a rogue wave slammed into the sterncastle. Owlbear, standing near the railing, was swept overboard in an instant. Red didn’t hesitate. He dove into the roiling sea, his cloak of the manta ray allowing him to cut through the water toward Owlbear’s thrashing form. But the panicked man was hard to control, and it took all of Red’s strength just to hold on.</p>
+
+				<p>Seeing the struggle, Varen acted without a second thought. From his perch in the crow’s nest, he dove into the stormy waters, his aquatic elf heritage giving him an advantage in the wild sea. He reached Red and Owlbear, and with a powerful spell, teleported all three of them back to the deck—just as a bolt of lightning struck the very spot on the crow's nest where Varen had stood moments before. The crew could only laugh at the bitter irony, even as they scrambled to get back to their stations.</p>
+
+				<p>The storm worsened as the <i>Scourge’s Bane</i> pressed deeper into the Eye, but they refused to yield. The crew’s resilience was tested again when the mast began to glow with a strange, baleful light. Before Varen could shout a warning, a blast of lightning threw him overboard. Two enormous lightning elementals materialized on the deck, one at the stern and one at the bow. Sandara rushed to fend off the elemental at the bow but was quickly overwhelmed, collapsing under the creature’s relentless assault. Red, his face set in grim determination, banished the elemental at the stern with a powerful spell, while Varen, bruised but alive, teleported back to the deck and fired his musket at the remaining threat.</p>
+
+				<p>The elemental surged forward, knocking Rosie and Samms aside as it barreled toward Varen, but the crew stood firm. With Red’s magic and Finn’s quick thinking, they managed to bring the elemental down. The storm quieted slightly, but the toll on the crew was clear. Bloodied and exhausted, they pressed on, knowing that any hesitation could cost them the race.</p>
+
+				<p>As the <i>Scourge’s Bane</i> broke through the storm’s edge, they realized with a surge of excitement—they were in the lead! Only the <i>Wormwood</i> remained in contention, and Harrigan’s ship was still far behind. Victory was within reach. But before Kasmira could celebrate, a sharp pain erupted in her back—an unseen attacker had struck. Gritting her teeth, she used Svingli’s Eye to reveal two shadowy figures—their attackers were invisible stalkers.</p>
+
+				<p>Red quickly cast a spell to reveal them, but the stalkers remained hidden. Varen, realizing the danger, cast another spell that threw glittering dust into the air, outlining the attackers in a sparkling haze. Now visible, the crew attacked with everything they had. Kasmira fought through the pain, guiding the ship while Sandara and Red healed her wounds. Together, the crew defeated the stalkers, but the battle had cost them precious time.</p>
+
+				<p>With the finish line in sight, the crew held their breath. Kasmira gripped the wheel, steering the ship with expert precision. The <i>Wormwood</i> was gaining, but Harrigan’s efforts were in vain. The <i>Scourge’s Bane</i> surged forward, crossing the finish line first—victorious!</p>
+			</article>
+        </main>
+
+        <footer>
+            <div id="foot">
+                <a href="{{ url_for('shackles.index') }}" id="footLink">Back to Top</a> 
+                <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="footerFlag">
+                <p>All Rights Reserved</p>
+            </div>
+            <a href="https://www.pathsixdesigns.com" id="foot2">PathSix Web Design</a>
+        </footer>
+    </body>
+</html>

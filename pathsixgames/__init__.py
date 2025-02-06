@@ -20,7 +20,9 @@ mail = Mail(app)
 from pathsixgames.users.routes import users
 from pathsixgames.posts.routes import posts
 from pathsixgames.winterMain.routes import winterMain
+from pathsixgames.shackles import shackles
 
 app.register_blueprint(users)
 app.register_blueprint(posts)
 app.register_blueprint(winterMain)
+app.register_blueprint(shackles, url_prefix='/shackles')
