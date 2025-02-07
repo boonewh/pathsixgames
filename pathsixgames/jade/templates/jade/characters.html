@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Date:   4/14/2023
+    Finished: 5/5/2023
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Pathfinder characters that are played in the PathSix weekly games."/>
+    <title>PathSix Characters</title>
+
+    <link rel="stylesheet" href="{{ url_for('jade.static', filename='css/style.css') }}">
+</head>
+
+	<body>
+		<header>
+			<div class="head">
+				<img src="{{ url_for('jade.static', filename='images/pathSixColorLogo.png') }}" alt="The Pathfinder 6">
+			</div>
+			<nav class="navSecond">
+				<a href="#" id="navicon">
+					<img src="{{ url_for('jade.static', filename='images/navicon.png') }}" alt="">
+				</a>
+				<ul>
+					<li><a href="{{ url_for('winterMain.index') }}">Home Page</a></li>
+					<li><a href="{{ url_for('jade.index') }}">Jade Regent Home</a></li>
+					<li><a href="{{ url_for('jade.book6') }}">Adventure Log</a></li>
+					<li><a href="{{ url_for('jade.characters') }}">Characters</a></li>
+					<li><a href="{{ url_for('jade.about') }}">About Us</a></li>
+				</ul>
+			</nav>    
+		</header>
+
+		<main class="container">
+			<div class="column1">
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/HeroLabAelfread.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/aelfread.png') }}" alt="Aelfread" class="leftPic">
+				</a>
+				<br>
+				<p>Aelfread</p>
+				<p>Inquisitor & Ninja</p>
+		
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/HeroLabEdam.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/edam.png') }}" alt="" class="leftPic">
+				</a>
+				<br>
+				<p>Edam</p>
+				<p>Paladin & Rogue</p>
+			</div>
+		
+			<div class="column2">
+				<img src="{{ url_for('jade.static', filename='images/PF2Logo.png') }}" alt="Pathfinder Logo" id="logo">
+				<h1>Characters</h1>
+				<p>Click on a picture to see character sheets</p>
+				<img src="{{ url_for('jade.static', filename='images/Sihedron-Rune-300x289.png') }}" alt="" id="star">
+		
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/HeroLabHaldir.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/haldir.png') }}" alt="" class="centerPic">
+				</a>
+				<br>
+				<p>Haldir</p>
+				<p>Wizard & Skald</p>
+		
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/Hero Lab - Sandru\'s Caravan.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/caravan.jpg') }}" alt="Caravan" id="caravan">
+				</a>
+				<p id="carav">The Caravan's Stats</p>
+			</div>
+		
+			<div class="column3">
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/HeroLabShura.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/shura.png') }}" alt="" class="rightPic">
+				</a>
+				<br>
+				<p>Shura</p>
+				<p>Cleric & Paladin</p>
+		
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/HeroLabTim.pdf') }}">
+					<img src="{{ url_for('jade.static', filename='images/tim.png') }}" alt="" class="rightPic">
+				</a>
+				<br>
+				<p>Tim</p>
+				<p>Fighter & Bloodrager</p>
+			</div>
+		</main>		
+
+		<footer>
+			<a href="{{ url_for('jade.characters') }}">Back to Top</a>
+			<p>All Rights Reserved</p>
+		</footer>
+		
+	</body>
+</html>

@@ -13,12 +13,23 @@
         <header>
             <nav class="navFirst">
                 <img src="{{ url_for('static', filename='images/pathsix_games_logo.png') }}" alt="The Pathfinder 6" id="mainLogo">
-                <a href="#" class="navicon"><img src="{{ url_for('static', filename='images/navicon.png') }}" alt="Hamburger Navigation Icon"></a>
+                <a href="#" class="navicon">
+                    <img src="{{ url_for('static', filename='images/navicon.png') }}" alt="Hamburger Navigation Icon">
+                </a>
                 <ul>
                     <li><a href="/">Home Page</a></li> 
                     <li><a href="{{ url_for('posts.book1') }}">Adventure Log</a></li>
                     <li><a href="{{ url_for('winterMain.dice') }}">Dice Roller</a></li>
-                    <li><a href="/">Past Adventures</a></li>
+                    
+                    <!-- Dropdown for "Past Adventures" -->
+                    <li class="dropdown">
+                        <a href="#">Past Adventures ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('shackles.index') }}">Skull & Shackles</a></li>
+                            <li><a href="{{ url_for('jade.index') }}">Jade Regent</a></li>
+                        </ul>
+                    </li>
+        
                     <li><a href="{{ url_for('winterMain.rules') }}">Rules Page</a></li>
                 </ul>
             </nav>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Date:   4/14/2023
+    Finished: 5/5/2023
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Pathfinder characters that are played in the PathSix weekly games."/>
+    <title>PathSix Characters</title>
+
+    <link rel="stylesheet" href="{{ url_for('jade.static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <img src="{{ url_for('jade.static', filename='images/pathSixColorLogo.png') }}" alt="The Pathfinder 6">
+        </div>
+        <nav class="navSecond">
+            <a href="#" id="navicon">
+                <img src="{{ url_for('jade.static', filename='images/navicon.png') }}" alt="">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('winterMain.index') }}">Home Page</a></li>
+                <li><a href="{{ url_for('jade.index') }}">Jade Regent Home</a></li>
+                <li><a href="{{ url_for('jade.book6') }}">Adventure Log</a></li>
+                <li><a href="{{ url_for('jade.characters') }}">Characters</a></li>
+                <li><a href="{{ url_for('jade.about') }}">About Us</a></li>
+            </ul>
+        </nav>    
+    </header>
+</body>
+</html>
+
+
+		<main class="adLogs">
+			<h1>Adventures - Book 6</h1>
+			<button onclick="window.location.href='#newest';">Jump to Newest Entry</button>
+			<button onclick="window.location.href='book4';">Book 4</button>
+			<button onclick="window.location.href='book5';">Book 5</button>
+			
+			<h4>November 18, 2023</h4>
+			<figure class="logLeftPic">
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/taotieh.png') }}">
+					<img src="{{ url_for('jade.static', filename='images/taotieh.png') }}" alt="A taotieh guardian creature" class="wide">
+				</a>
+				<figcaption>Taotieh</figcaption>
+			</figure>
+				<title>Shadows and Schemes in Kasai - A Pathfinder Chronicle</title>
+			
+			<div class="content">
+				<h3>Shadows and Schemes in Kasai - A Pathfinder Chronicle</h3>
+		
+				<p>As the first light of dawn broke over the distant hills, our band found itself in a quaint farmstead, a stone's throw away from the imposing gates of Kasai, the Imperial city. The air was crisp, carrying the scent of fresh earth and the distant sea, setting the stage for our daring venture.</p>
+		
+				<h2>A City under Watchful Eyes</h2>
+				<p>Our journey into the city was cloaked in both literal and figurative shadows. Thanks to Haldir's masterful spellwork, we donned disguises that hid us from prying eyes, but the oni guards at the city gates were no fools. Their penetrating gazes and pointed questions sent a shiver down my spine, hinting at the danger lurking within the city's walls.</p>
+		
+				<h2>Meeting with Asachi Isao</h2>
+				<p>Inside the city, the atmosphere was tense, as if a storm was brewing just beneath the surface. We navigated through the crowded streets, filled with whispers of despair and fear, to meet our contact - Asachi Isao. His surprised expression upon seeing us quickly turned to one of grim determination as he detailed the Jade Regent's tyrannical rule. The public executions, the hoarding of food, the captivity of royal daughters - each revelation was like a dagger to our hearts.</p>
+		
+				<h2>A Mission of Hope</h2>
+				<p>Asachi's words, however, also carried a glimmer of hope. Our efforts in rallying an army had not gone unnoticed, but to truly turn the tide, we needed to address the city's suffering and undermine the Regent's iron grip. Our first task, as Asachi outlined, was to seek the blessings of the emperors of the past on the mystical Imperial Shrine island, believed to be the refuge of Emperor Shigure.
+				</p>
+		
+				<h2>A Night of Stealth and Bravery</h2>
+				<p>That night, a decision was made. Before embarking to the island, we would extend our hand to the suffering people of Kasai. Even Ameiko, with a heart as brave as her sword is sharp, insisted on this. Under the cover of darkness, we stealthily made our way to the rice granaries.
+				<br>
+				The granaries were guarded, not by men, but by marble statues of Taotieh - guardian creatures that came to life before our eyes. The ensuing battle was a testament to our resolve. The clash of steel against stone echoed through the night as we fought fiercely. Victory was ours, and with the help of Sandru and his local allies, we filled wagons with rice, a beacon of hope for the citizens of Kasai.</p>
+				<hr>
+				<h4>November 24</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/execution.jpg') }}">
+						<img src="{{ url_for('jade.static', filename='images/execution.jpg') }}" alt="An Execution in the Square" class="tall">
+					</a>
+					<figcaption>An Execution in the Square</figcaption>
+				</figure>
+				<h3>Defiance in the Shadow of the Imperial Castle</h3>
+
+				<h2>A Whisper of Injustice</h2>
+				
+				<p>The air in our makeshift base in the heart of the Imperial city was heavy with a mix of triumph and trepidation. We had just liberated a significant amount of rice for the starving populace when whispers of an impending execution reached our ears. It was said to be happening near the imperial castle, a place where fear and power intermingled.</p>
+				
+				<h2>A Gathering of Shadows</h2>
+				
+				<p>We hastened to the site, our hearts pounding with a mix of dread and determination. The scene that greeted us was one of grim spectacle: a large crowd held at bay by an imposing array of imperial soldiers, their armor gleaming with a cold indifference. The crowd, a mixture of fear and suppressed anger, was kept 15 feet away from a large scaffold - the stage of forthcoming despair.</p>
+				
+				<h2>The Curtain Rises on a Dire Scene</h2>
+				
+				<p>Three prisoners, the epitome of helplessness, stood on the scaffold. The charges against them were read in a chillingly dispassionate tone. As the first prisoner was led towards the chopping block, a palpable tension gripped the air.</p>
+				
+				<h2>A Bold Rescue</h2>
+				
+				<p>In that moment of suspended breath, Edam, with a courage as fierce as his loyalty, broke through the guards. He leapt onto the scaffold, drawing all eyes to him. Simultaneously, Haldir, our voice of inspiration, used his oratory powers to captivate and distract. Aelfread, ever the master of stealth, turned invisible, moving unseen.</p>
+				
+				<h2>A Battle for Lives and Ideals</h2>
+				
+				<p>The guards, in their confusion, lunged towards Haldir. That&#39;s when Tim stepped in, a guardian in his own right, engaging the soldiers. What followed was a dance of chaos and heroism. Haldir's spells wove a tapestry of cold and fire across the battlefield, while Shura, channeling divine might, bolstered us with buffs and hurled offensive spells. Amidst this maelstrom, Edam, with the loyal Crash by his side, faced a circle of five guards. Together, they fought with a ferocity born of desperation, whittling down their adversaries one by one.</p>
+				
+				<h2>Triumph Against Tyranny</h2>
+				
+				<p>In the end, it was our unity, our unyielding spirit, that saw us through. We emerged victorious, the prisoners in tow, vanishing into the city's labyrinthine streets, leaving behind a scene that would be etched in the memory of Kasai for times to come.</p>
+				<hr>
+				<h4>November 25</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/gravebound-warden.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/gravebound-warden.png') }}" alt="Gravebound Warden" class="tall">
+					</a>
+					<figcaption>Gravebound Warden</figcaption>
+				</figure>
+				<h3>Mysteries and Shadows of the Imperial Shrine</h3>
+
+				<h2>The Quest for Blessings</h2>
+
+				<p>In the safety of our city safehouse, with the adrenaline of our recent escapades still lingering, Asachi Isao deemed it was time for a crucial venture. Our next step was to seek the blessings of past emperors at the island shrine. His warning was clear - proceeding without these blessings could render our efforts futile.</p>
+
+				<h2>Journey to the Enigmatic Island</h2>
+
+				<p>Boarding a modest boat, we set sail towards the island, guided by Haldir's seasoned sailing prowess. The rhythmic rowing by Tim, Shura, and Aelfread punctuated our journey with a sense of purpose. As we drew closer, a sense of otherworldliness enveloped us. The island appeared blurred, as if shrouded in a veil of mystery.</p>
+
+				<h2>A Passage to Another Realm</h2>
+
+				<p>Haldir, with a sharp gaze, deduced we were crossing into another plane of existence. Each gate we passed under peeled away layers of obscurity, revealing the island's true form. A fleeting glimpse of a departing boat, ghostly and ephemeral, heightened the sense of surrealism.</p>
+
+				<h2>A Temple of Ancestral Honor</h2>
+
+				<p>Docking at a stone pier, we were greeted by a humble temple dedicated to Shizuru, the deity revered in Minkai for her guardianship over ancestors, honor, and the sun. This shrine, we realized, was more than a mere structure; it was a bridge to the past.</p>
+
+				<h2>Encounter with the Caretaker</h2>
+
+				<p>Inside, we encountered a robed caretaker, her presence as serene as the temple itself. After learning our allegiance to Ameiko, she offered guidance, leading us to a crossroads. In a blink, she vanished, leaving us amidst a whirlwind of emotions and apparitions.</p>
+
+				<h2>Visions and Battles</h2>
+
+				<p>Haunting images of two star-crossed samurai, bound by love but torn apart by loyalty to a malevolent emperor, washed over us. Their tragic tale culminating in seppuku left an air of sorrow. This sorrow quickly turned to alarm as we found ourselves encircled by shades, prompting a battle to protect Ameiko and Sandru.</p>
+
+				<h2>A Gargantuan Adversary</h2>
+
+				<p>Our path led us to a water-encircled area, where we were confronted by a gargantuan creature, an amalgamation of monolith headstones. The battle that ensued was fierce. Edam bore the brunt of its wrath until Tim, with his colossal sword, delivered a series of devastating blows, eventually causing the construct to crumble.</p>
+
+				<p><b>To be continued...</b> Will our journey at the shrine lead us to the blessings we seek, or will the island's dark secrets consume our quest? Find out in our next chapter.</p>
+				<hr>
+				<h4>December 2</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/meeting.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/meeting.png') }}" alt="Meeting the Emperor" class="wide">
+					</a>
+					<figcaption>Meeting the Emperor</figcaption>
+				</figure>
+				<h3>Mystical Crossings and Ghostly Encounters</h3>
+				<h2>The Enchanted Bridge and the Tori Gate: A Magical Threshold</h2>
+				<p>
+					As our party, led by the keen-eyed Haldir, approached a bridge shrouded in mist, an ethereal glow hinted at hidden magics. Crossing this bridge, under the ancient tori gate, was like stepping through a veil into another world. The air crackled with energy, and as we crossed, a glyph of warding sprung to life, sending searing pain through our ranks. Thanks to Shura's quick healing, we persevered, pushing forward into the unknown.
+				</p>
+				<h2>The Stage of Enchantment and the Ghostly Emperor</h2>
+				<p>
+					Ahead lay a stage, bathed in an aura of divine magic, its purpose a mystery even to Shura's experienced eyes. When Haldir stepped onto it, instruments sprung to life, filling the air with an otherworldly melody, as if played by invisible hands.
+					<br>
+					Our journey then led us to a somber mausoleum, where we encountered the spectral form of Emperor Higashiyama Shigure. His tale was one of betrayal and murder, a tragedy that now cursed the island. He revealed that to right this wrong, we must brave the perilous Well of Demons to retrieve and cremate his remains, thus quelling the spreading evil.
+				</p>
+				<h2>The Ancestral Guidance and the Well of Demons</h2>
+				<p>
+					Emperor Shigure's parting words guided Ameiko to seek counsel from her ancestor, the archon Amatatsu Onoko. In another tomb, the archon's wisdom pointed us towards the Well of Demons, promising her protection over Ameiko as we delved into the abyss.
+					<br>
+					The well itself was a gaping chasm, a maw of darkness where Aelfread, overcome by a strange compulsion, fell into its murky depths. There, omox demons awaited, their slimy forms emerging to assault him. It was a battle of magic and might, as Edam and his now-winged dog, Crash, plunged into the fray, and Haldir and Shura followed, their skills tested against the demonic horde.
+				</p>
+				<h2>The Climactic Battle: Defeating the Demons</h2>
+				<p>
+					In the tumultuous battle, Shura's hammer and Haldir's arcane prowess shone brightly. Together, they turned the tide, vanquishing the demons with a combination of brute force and dazzling pyrotechnics. Their victory, hard-won, was a testament to their courage and strength, setting the stage for the next chapter of their quest.
+				</p>
+				<hr>
+				<h4>December 9</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/shogun.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/shogun.png') }}" alt="Shogun Teikoku Sokai" class="wide">
+					</a>
+					<figcaption>Meeting Shogun Teikoku Sokai</figcaption>
+				</figure>
+				</figure>
+				<h3>Echoes of Betrayal in the Well of Demons</h3>
+
+				<h2>A Mist of Menace</h2>
+				<p>Our journey through the caverns was an eerie blend of silence and anticipation. The air grew heavier, and a thick, wet mist enveloped us as we ventured deeper. It was in one such cavern, shrouded in this ghostly fog, that the unexpected occurred. The mist suddenly took form, revealing four malevolent demons!</p>
+
+				<h2>A Battle of Surprise and Courage</h2>
+				<p>These fiends, born of the mist, launched a sudden assault. Edam and Haldir found themselves in the clutches of evil. Haldir, with a swift dimension step, extricated himself from danger, while Edam, fueled by righteous fury, smote the demon that dared to bind him. Tim leapt into action, his strikes resonating through the cavern, as Shura wove a tapestry of healing to sustain us through the demons' brutal onslaught. United, our group stood strong against the demonic tide, eventually sending them back into the void from whence they came.</p>
+
+				<h2>From Shadows to Splendor</h2>
+				<p>Leaving the misty gloom behind, we emerged into a realm of unexpected opulence. A throne room lay before us, its floor a mosaic of gold tiles and rubies. Dominating the room was an ornate dais, upon which sat Shogun Teikoku Sokai.</p>
+
+				<h2>A Treacherous Bargain</h2>
+				<p>Haldir approached the Shogun, words as sharp as any blade. Sokai, with a veneer of regality, proposed a sinister bargain: freedom from the Well in exchange for his blessing and knowledge. We knew immediately - this was a pact we could not entertain. Edam, with blunt honesty, and Haldir, with diplomatic grace, refused the offer and resolved to end Sokai's dark reign.</p>
+
+				<h2>A Shogun's True Form</h2>
+				<p>In response, Sokai unleashed his sorcery, dazing several of us momentarily. His form then twisted grotesquely into a massive pig demon. The creature struck Edam with such force that he was sent reeling, sprawling across the floor. But our resolve was unshaken.</p>
+
+				<h2>The Fall of a False Shogun</h2>
+				<p>What followed was a fierce battle of might, magic, and faith. Tim's powerful blows, Edam's swift swordplay, Aelfread's rapid strikes, Haldir's supportive spells, and Shura's divine interventions wove together in a dance of destruction. Together, we vanquished the Shogun, ensuring his malevolence would forever remain within the confines of the Well of Demons.</p>
+
+				<p>We have taken refuge to rest and recover in the confines of a pocket dimension of Haldir's makings. To be continued... Our journey through the Well of Demons has tested us in ways unforeseen, but we emerge stronger, our resolve unbroken.</p>
+				<hr>
+
+				<h4>December 16</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/demon.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/demon.png') }}" alt="fight with the demon" class="tall">
+					</a>
+					<figcaption>The Demon Assassin</figcaption>
+				</figure>
+				<h3>Echoes and Shadows in the Caverns of Mystery</h3>
+
+				<h2>A Masked Enigma in the Corridor</h2>
+				<p>Our expedition through the labyrinthine caverns took a turn towards the enigmatic. Traversing a natural corridor, we were abruptly confronted by a figure adorned with a porcelain mask, a rat tail ominously protruding from beneath her robes. Haldir, ever the diplomat, declared our noble mission to aid Ameiko in her quest for the throne, demanding cooperation or passage. Yet, the masked figure stood unmoved, her gaze fixed upon us from behind the inscrutable facade of her mask.</p>
+
+				<h2>A Dance of Illusions and Pain</h2>
+				<p>Edam, growing impatient, stepped forward, asserting our need to pass. In a flash, the figure adopted a stance of combat and vanished into thin air, only to reappear moments later after inflicting a swift, painful strike on Edam. This encounter was quickly escalating beyond a mere standoff.</p>
+
+				<h2>The Fracturing Foe</h2>
+				<p>Without warning, she split into six identical forms, each one an echo of the original. A chaotic ballet ensued as these clones, armed with poisoned arrows and blades, took to the air and ground. The cavern became a warzone of arrows raining from above and melee combat below. We focused our efforts on the ground assailants first, watching in shock as they burst into petals upon defeat.</p>
+
+				<h2>Unraveling the Illusion</h2>
+				<p>Our attention then turned skyward. One by one, we struck at the airborne assailants until a telling blow revealed the true adversary. Like her clones, she exploded into a cloud of lotus petals upon defeat, leaving us in a momentary silence, contemplating what she had been guarding so fiercely.</p>
+
+				<h2>A Throne Room of Tapestries and Deception</h2>
+				<p>Venturing further, we found ourselves in yet another throne room, grander than any before, adorned with intricate tapestries. But tranquility was short-lived, as black-winged women wielding flaming longbows emerged from their high perches. The battle reignited with Tim taking to the skies, his blows forceful and true. Haldir, with a masterful spell, brought four of our adversaries plummeting to their demise. Edam joined the aerial fray, lending his prowess to swiftly dispatch the remaining foes.</p>
+
+				<h2>A Startling Revelation</h2>
+				<p>As the dust settled and the echoes of battle faded, our attention was drawn to a solitary figure upon the throne. Astonishment gripped us as we realized the woman bore a striking resemblance to Ameiko. In this den of evil, we had found a member of the Amatasu family, one of Ameiko&#39;s ancestors. Her presence in such a malevolent place was as bewildering as it was alarming.</p>
+
+				<p>To be continued... Our journey through the caverns has unveiled secrets and dangers alike, leaving us with more questions than answers.</p>
+				<hr>
+				<h4>December 30</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/nightwing.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/nightwing.png') }}" alt="Nightwing" class="tall">
+					</a>
+				</figure>
+				<h3>We Face Amatatsu Maemi</h3>
+				<p>Confronting Amatatsu Maemi on her throne, Haldir boldly stepped forward, proclaiming our identity as Scions of the Amatatsu family. We were on a solemn quest to aid Ameiko in reclaiming her rightful place. Maemi, intrigued by the prospect of a female Amatatsu ascending the throne, asked about our intentions. We expressed our need to find the former Emperor's body and restore the island above. Her response was one of caution and foresight, urging us to return for her blessing upon completing our quest, expressing a desire to meet Ameiko. Yet, beneath her calm demeanor, we sensed hidden motives.</p>
+
+				<p>Descending from her throne, she led us to a cascading waterfall, the gateway to the depths below. “You will need to go down there,” she indicated, pointing towards a lower chamber. Employing magic, we commenced our descent into the shadowy depths. Once at the chamber's edge, we navigated towards two ominous exits.</p>
+
+				<h3>Encounter with the Samurai</h3>
+				<p>Edam, cloaked in near invisibility, stealthily approached one of the exits. Peering in, he spotted a figure clad in black samurai armor, its back turned to us. We decided to confront this enigmatic figure. As we approached, it turned, revealing an emaciated, undead visage, and with a menacing gesture, summoned undead warriors. The chamber erupted into chaos as the lead undead unleashed a corrosive acid blast, marking both flesh and armor. The battle was arduous, but our unity and resolve led us to triumph.</p>
+
+				<h3>A Battle in the Cavern of Darkness</h3>
+				<p>Our journey took us to a vast cavern, shrouded in impenetrable darkness. As we ventured deeper, we sensed a formidable presence, barely visible against the dark backdrop. A colossal, bat-like creature, woven from shadows, swooped down upon Edam. In a fierce battle against this dark entity, we stood united, each member playing a crucial role in felling this monstrous foe.</p>
+
+				<p>Our quest demands that we delve deeper into these infernal depths, each step bringing us closer to the heart of darkness and the culmination of our mission.</p>
+				<hr>
+				<h4>January 6, 2024</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/ito_battle.jpg') }}"><img src="{{ url_for('jade.static', filename='images/ito_battle.jpg') }}" alt="Shojinawa Ito" class="tall"></a>
+					<figcaption>Shojinawa Ito</figcaption>
+				</figure>
+				<h3>Encounter with the Undead Emperor</h3>
+				<p>Under a cavern ceiling adorned with starry patterns, we discovered a throne and a long-deceased corpse emitting a foul stench. Hovering above the body was a spectral figure clad in burnt imperial regalia, crowned with authority. His voice boomed through the cavern, demanding our identities and purpose. Haldir, with unwavering resolve, proclaimed our lineage as Scions of the Amatatsu and our mission to cleanse the hellish depths and right the wrongs committed. The apparition, identifying himself as Shojinawa Ito, rebuked our presence and intentions, declaring the body to be his. A tense exchange followed, culminating in Ito unleashing powerful sorcery as the very shadows formed into undead assailants.</p>
+
+				<h3>A Battle of Light and Shadows</h3>
+				<p>The cavern erupted into chaos as Ito summoned a towering column of fire, the likes of which we had never seen. The shadows converged upon us, their dark claws slashing through the air. Our party leapt into action with Tim, Aelfread, and Edam engaging the shadows in physical combat while Shura and Haldir bolstered us with magic and chants. Haldir, shifting his tactics, exchanged spell barrages with Ito. The battle intensified as Ito, sensing the threat of our holy warrior Shura, turned his malevolent focus onto Shura. With spells dwindling, Aelfread joined the fray with his longbow, chipping away at the undead sorcerer's defenses.</p>
+
+				<h3>The Final Confrontation</h3>
+				<p>As the shadows fell one by one, Edam charged at Ito, who swooped down in a dark arc, channeling unholy magic into Edam. Undeterred, Edam retaliated with divine smites, sealing the demise of the undead sorcerer. With Ito vanquished, we regrouped and moved on discovering a magical boat at the cavern's heart. As we embarked, the boat set off across the lake, guided by unseen forces.</p>
+
+				<h3>A New Threat Emerges</h3>
+				<p>Our passage was not unchallenged, as a water elemental and a cadre of frog demons emerged, intent on thwarting our progress. The elemental assailed the boat, while the demons unleashed a barrage of spittle that threatened to put the party to sleep. Edam took to the air, confronting the elemental to prevent it from capsizing our vessel. Meanwhile, the rest of us engaged in a ferocious battle with the frog demons. One by one, each party member felled a demon, and Edam successfully banished the elemental, securing our passage across the lake.</p>
+
+				<p>To be continued... As we navigate these perilous waters, the depths of hell continue to reveal their harrowing challenges, testing our resolve and strength at every turn.</p>
+
+				<hr>
+				<h4 id>January 13</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/nobinoru.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/nobinoru.png') }}" alt="Emperor Sugimatu Nobinoru" class="wide">
+					</a>
+					<figcaption>Emperor Sugimatu Nobinoru</figcaption>
+				</figure>
+				</figure>
+				<h3>Thrilling Escape from the Well of Demons</h3>
+				<p>Our adventure intensified as the magic boat we traveled in beached itself on the distant shore of a mysterious cavern. Edam, ever the stealthy scout, disappeared into the shadows to lead the way. The cavern's eerie silence was punctuated by an otherworldly blue light, creating an atmosphere of foreboding and suspense. Suddenly, Edam's mind echoed with an unexpected telepathic message, heralding the presence of a sinister being.</p>
+
+				<h3>A Fateful Encounter with Emperor Sugimatu Nobinoru</h3>
+				<p>Edam's shocking discovery revealed a demonic figure cloaked in black – Emperor Sugimatu Nobinoru. Known for his ruthless past and evil deeds, Nobinoru offered us the blessings of the five families, a proposition that Edam promptly declined. Despite Nobinoru's insistence on his control over the realm and his offer of help, Haldir boldly stepped forward, rejecting the offer and affirming our mission to vanquish such malevolence.</p>
+
+				<h3>An Epic Battle Ensues</h3>
+				<p>The tension erupted into a fierce battle. Nobinoru summoned demonic reinforcements while casting devastating spells. Haldir and Shura, amidst the chaos, fought bravely, with Shura's heroic healing efforts keeping the team resilient. Our relentless assault through the demon ranks finally brought us face to face with Nobinoru, who hovered menacingly above us. The confrontation reached its climax as Edam, empowered by his Greater Angelic Aspect, soared upwards and delivered a decisive blow to the evil Emperor.</p>
+
+				<h3>The Cavern's Menacing Transformation</h3>
+				<p>In the wake of Nobinoru's death, the cavern underwent a startling transformation. The blue light intensified, and the ground trembled ominously. Haldir's quick thinking led him to cast a teleport spell, whisking us away from the impending danger to an upper level, where we faced another ancestor. Despite her ominous laughter and warning of eternal entrapment, Haldir's determination saw us narrowly escaping the cavern's clutches, though not without a harrowing moment of freefall.</p>
+
+				<h3>A Return to the Island and Conclusion of the Quest</h3>
+				<p>Back on the island's surface, our team successfully returned the last Emperor's body to its rightful resting place. Completing the ancient rituals, we ensured the Emperor's peaceful repose, marking the end of an extraordinary journey through the Well of Demons. Our unity and courage had triumphed over the darkness, leaving us with tales of bravery and an unbreakable bond forged through adversity.</p>
+				<hr>
+				<h4>January 20</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/palace.jpg') }}">
+						<img src="{{ url_for('jade.static', filename='images/palace.jpg') }}" alt="The Imperial Palace" class="tall">
+					</a>
+					<figcaption>The Imperial Palace</figcaption>
+				</figure>
+				
+				<h3>The Emperor's Rest and A New Quest</h3>
+				<p>The saga of our brave adventurers continued as they heroically recovered the body of Emperor Shigure, ensuring the ancient rituals were performed with reverence. In a moment of ethereal grace, the spirits of past emperors descended, bestowing their hallowed blessing upon Ameiko, acknowledging her as the true heir to the throne. But with great power comes great responsibility, and the spirits implored our party to undertake a monumental task: to retrieve the seals of the obliterated dynastic families. This mission, shrouded in mystery and danger, would pave the way to reforge the shattered lineage of the empire. Eager to restore balance, our party pledged their allegiance to this noble cause.</p>
+				<h3>Journey Back to the Mainland</h3>
+				<p>With their hearts set on righting the wrongs of the past, our valiant heroes embarked on their return journey to the mainland. The winds of change were already stirring, as whispers of the true heir's return spread like wildfire through the city. A new challenge loomed on the horizon: the formidable army of Jiro, encamped outside the city gates. The presence of these allies, awaiting our heroes' command, had the Jade Regent's Typhoon Guard on a knife's edge. In a twist of fate, our benefactor, Asachi Isao, presented yet another daring task – to rescue the daughters of noble families, pawns in the Jade Regent's tyrannical game. Our heroes, resolute in their quest for justice, prepared to infiltrate the Imperial Palace and liberate the captives.</p>
+				<h3>Infiltrating the Imperial Palace</h3>
+				<p>The Imperial Palace, an impenetrable fortress warded against teleportation magics, posed a significant challenge. Yet, our heroes, masters of strategy and guile, devised a cunning plan. Utilizing the city's waterways, they embarked on an aquatic journey, with Haldir's Life Bubble spell allowing them to breathe underwater. Stealthily navigating the canals, they approached the palace, their resolve as strong as the currents that carried them. Tim's incredible strength bent the bars of a grate, granting them access to the palace grounds, a testament to the power and resourcefulness of our band of heroes.</p>
+				<h3>A Clash with Clockwork Constructs</h3>
+				<p>Inside the palace, danger lurked in every shadow. Aelfread's newfound ability to become invisible and undetectable led the way. However, their presence did not go unnoticed for long, as palace guards soon discovered them. A fierce battle ensued, with Haldir's quick thinking and Edam's mastery of Sky Steed turning the tides in their favor. But the palace held more than just human guards; strange statues sprang to life, attacking the party with ferocious might. Each fallen automaton erupted in a deadly explosion of gears and metal shards. In a breathtaking display of courage and skill, our heroes vanquished these mechanical monstrosities, standing triumphant amid the ruins, yet keenly aware that their presence was now known to all within the palace.</p>
+				<p>As our heroes regroup, their quest continues, fraught with peril but driven by a righteous cause. Will they succeed in their mission and restore the rightful heir to the throne? Only time will tell, but one thing is certain – their journey will be etched in the annals of history, a tale of bravery, cunning, and unwavering determination.</p>
+				<hr>
+				<h4>February 10</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/tiger-tapestry.jpg') }}">
+						<img src="{{ url_for('jade.static', filename='images/tiger-tapestry.jpg') }}" alt="The Tiger Tapestry" class="tall">
+					</a>
+					<figcaption>The Tiger Tapestry</figcaption>
+				</figure>
+				<h3>Descent into the Treasury</h3>
+				<p>Our intrepid adventurers delved deep into the heart of the enigmatic palace, each step taking them closer to the legendary treasury. Rooms filled to the brim with treasures awaited: ceremonial robes and armor gleaming with history, gems that sparkled with the promise of untold riches, and mountains of gold that could tempt even the most stoic of heroes. But the pièce de résistance was none other than an imperial dragon, a majestic guardian of its hoarded room.</p>
+			
+				<h3>A Barrage of Obstacles</h3>
+				<p>The palace was a labyrinth of danger, with traps cunningly hidden to catch the unwary and doors locked against intruders. Yet, our hero Edam proved equal to the task, disarming traps with the skill of a master and unlocking doors as if by magic. Confronting the dragon, we sought its alliance, appealing to its desire for the rightful ruler. Alas, bound by magic, the dragon served the current throne's occupant, leaving us to navigate a path fraught with peril.</p>
+			
+				<h3>The Tapestry of Terror</h3>
+				<p>Our journey led us to a chamber adorned with a tapestry of such exquisite detail it seemed alive. This illusion became terrifying reality as tigers leapt from the fabric, their roars filling the air. Haldir, caught in their ferocious assault, narrowly escaped their clutches. With teamwork and courage, we overcame these animated assailants. Tearing down the tapestry revealed a hidden stairwell, a new path leading into the unknown.</p>
+
+				<h3>The Geisha's Gambit</h3>
+				<p>Ascending to the second floor, Edam's keen senses uncovered a room where geishas performed under the watchful eyes of guards. A closer look revealed a force prepared for battle. Stealthily retreating, we strategized a surprise attack. The battle was fierce, yet fortune favored us when a geisha's song, meant to empower the guards, instead bolstered our resolve. Magic and might combined to topple the guard leader, and soon, the room was ours. Freeing the geishas, we pressed on, deeper into the palace's heart.</p>
+				<hr>
+				<h4>February 17</h4>
+				<figure class="logRightPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/giant-spider.jpg') }}">
+						<img src="{{ url_for('jade.static', filename='images/giant-spider.jpg') }}" alt="Spider Attack" class="tall">
+					</a>
+				</figure>
+				<h3>Desperate Gestures and Silent Warnings</h3>
+				<p>As our adventure continued on the second floor, we stumbled upon a grim scene: three geishas, bound and silenced, their frantic gestures the only cry for help we could perceive. Through Haldir's mastery of magic, a spell allowing him to read lips from afar, their silent message became clear: a warning to look above. There, to our horror, awaited an assembly of arachnids—a trio of large spiders and a monstrous spider of unimaginable ugliness, accompanied by two sinister figures with spider legs protruding from their backs. Without hesitation, they descended upon us, launching webs and spells in a deadly dance.</p>
+
+				<h3>A Battle Against Darkness</h3>
+				<p>The fight was swift and merciless. Edam, Tim, and Shura, fueled by a blend of courage and revulsion, made short work of our eight-legged foes. It wasn't long before the geishas were freed, their chains broken, as we urged them to seek safety. Yet, our respite was brief, for the echoes of a rowdy crowd behind a nearby door beckoned us further into the unknown.</p>
+
+				<h3>The Oni's Challenge</h3>
+				<p>Behind the door, a cacophony of shouts and laughter betrayed the presence of a foe unlike any other: the oni. With strategy and might, Haldir amplified Tim's stature, while Edam and his loyal dog took to invisibility. The confrontation was inevitable; Edam's strike upon an unsuspecting oni ignited chaos. As battle ensued, Tim, now a giant among men, bore the brunt of the assault, his resilience tested by a barrage of crossbow bolts from above. Yet, with Shura's healing and Haldir's support, his onslaught remained unbroken. It was Edam's righteous fury, a smite born of pure conviction, that heralded the fall of the oni leader. With the tide turned, Tim took to the skies, his spell-powered flight bringing the battle to the oni with crushing results. Assisted by Crash, Edam's formidable dog, the halfling flew over to help Tim. With our blades flashing, the oni fell, their threat extinguished by our unyielding resolve.</p>
+				<hr>
+				<h4>February 25</h4>
+				<figure class="logLeftPic">
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/jaderegent.jpg') }}">
+						<img src="{{ url_for('jade.static', filename='images/jaderegent.jpg') }}" alt="The Jade Regent" class="wide">
+					</a>
+					<figcaption>The Jade Regent</figcaption>
+				</figure>
+				<h3>A Daring Encounter: The Path to the Throne</h3>
+				<p>Moving forward, the group discovered a room full of unarmed individuals, revealing themselves to be the palace servants, ensnared in a web of fear and uncertainty. The sight of our approach only heightened their unease, yet amidst the tension, a figure emerged – Edam, clad in shining armor, his demeanor almost childlike, with a loyal dog by his side, offering a glimpse of comfort. This serene presence quelled the servants' fears, allowing us to glean vital information about the palace's defenses. It became clear: there were no secret passageways leading to the throne room, and the element of surprise was not in our favor. The sound of the statues' explosive demise at the palace gates had already forewarned the palace guards of our impending arrival.</p>
+			
+				<h3>A Guise Most Clever</h3>
+				<p>With newfound resolve, Haldir, through his arcane mastery, bestowed upon us the appearance of oni guards, a disguise that allowed us passage from the servant quarters towards the throne room. Despite a momentary interrogation by the palace guards, Haldir's quick wit and fluency in their tongue convinced them of our fabricated urgency to retrieve forgotten equipment. Our ruse, however, began to crumble as we plotted our next move beyond the throne room, only to be confronted by guards unswayed by our earlier tale, demanding our return to post as decreed by the "general". The tension escalated rapidly, culminating in a silent battlefield conjured by Haldir's magic, where our resolve was tested against the palace's defenders.To start the melee, Tim gave a mighty kick to send one of the guards to the bottom of the stairwell he was standing in, leaving leaving the oni on his back, staring back up in stunned disbelief.</p>
+			
+				<h3>The Throne Room Confrontation</h3>
+				<p>Undeterred by the skirmish, we pressed on to the heart of our quest – the throne room, where the Jade Regent sat, surrounded by his elite guard. Haldir's bold challenge to the Regent set the stage for an epic confrontation. Chaos ensued as the Regent's call to arms was met with immediate aggression from his guards. Among the adversaries, an oni of monstrous size and a spellcaster who defied gravity, turning the battlefield into a domain where the laws of physics were merely suggestions. Amidst this maelic whirlwind, Ameiko and Shura found themselves battling from the ceiling, as Haldir's sorcery and tactical genius sculpted the chaos into opportunities, manipulating time and space to our advantage.</p>
+			
+				<h3>A Clash of Titans</h3>
+				<p>The battle raged, with Tim and Edam facing the gargantuan oni in a display of valor and might, while Haldir's arcane prowess dismantled the oni caster's enchantments, rendering her a victim to her own battlefield turned against her. Even as the tide seemed to turn in our favor, the Regent, emboldened by desperation, launched a surprise attack on Edam. Yet, the resilience of our comrades, fueled by camaraderie and a relentless pursuit of justice, as well as the epic healing of Shura, overwhelmed the Regent's defenses, leading to his downfall. In the wake of victory, a sudden darkness enveloped us, heralding an unexpected twist that promised to keep our blades sharp and our spirits unyielded.</p>
+			
+				<h3>The Adventure Continues</h3>
+				<p>As the dust settled and the echoes of battle faded, we stood amidst the remnants of a once indomitable foe, the throne room bearing witness to our resolve. Yet, the abrupt shroud of darkness and the ensuing explosion served as a stark reminder that in the world of adventure, complacency is a luxury ill-afforded. The journey is far from over, and the path ahead remains fraught with danger and mystery. Join us next week, as we delve deeper into the unknown, where fate awaits to unfold the next chapter of our saga.</p>
+			</div>
+			<h4 id="newest">March 2</h4>
+			<figure class="logRightPic">
+				<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/finalFight.jpg') }}">
+					<img src="{{ url_for('jade.static', filename='images/finalFight.jpg') }}" alt="The Voidlord" class="wide">
+				</a>
+				<figcaption>The Voidlord</figcaption>
+			</figure>
+			<h3>The Twilight Throne Room</h3>
+				<p>The aftermath of battle left our minds in a fog, and as clarity returned, it became starkly evident—we were no longer where we had been. The throne room around us, once a kaleidoscope of regal hues, was now a desolate expanse of greys. Ameiko, Sandru, and Edam's loyal hound lay still, as if touched by a sorcerer's cruel hand. In this eerie silence, a voice echoed with dark promise from the shadows.</p>
+
+				<h3>Whispers of Power</h3>
+				<p>"I was afraid such feeble foes would not suffice." The voice was both a hiss and a growl as the oni, a huge void yai, a Voidlord, stepped into our bleak new world. Its eyes held the cold light of distant stars. "You have shown a might that deserves more than mere accolades. Imagine, ruling in place of Ameiko... the strong leader that this realm yearns for," it mused, gesturing contemptuously towards her unconscious form.</p>
+
+				<h3>Edam's Defiance</h3>
+				<p>Edam's laughter cut through the tension, bold and undeterred. "A puppet to your whims? That will be the day." The void yai's grimace was a promise of pain. "No, not a puppet. A leader under which I can cloak my desires," it retorted, advancing towards our fallen friends. Haldir, with a warrior's stance, challenged the creature. "Who are you?!" he demanded. "I am Shogun Tsuneni," it bellowed, "and you will rue your insolence."</p>
+
+				<h3>Enter the Tempest</h3>
+				<p>Our resolve was tested anew as another entity joined the fray—a wind yai, her third eye burning with otherworldly insight. She was a tempest personified, the air around her alive with the breath of the night itself. The oni unleashed their magic, a maelstrom of dark sorcery intent on our destruction.</p>
+
+				<h3>Escape to Reality</h3>
+				<p>Shura saw the advantage that the oni's spells provided and was determined to end the problem, but the oni's resistance to powerful magics held firm. As the spells and shadows danced in the grim theater, Haldir perceived our grim disadvantage. With a word that tore through dimensions, he invoked a limited wish, spiriting us back to the material plane. The familiar throne room greeted us, and life stirred in our companions once more.</p>
+
+				<h3>The Dragon's Gambit</h3>
+				<p>But victory is never so easily grasped. The oni, undeterred by realms, materialized with vengeful fury. Edam bore the brunt of the wind yai's wrath, her club a brutal pendulum. Yet, as Ameiko's eyes opened, Haldir's strategy unfurled—he thrust her towards the Jade Throne. "Claim your destiny!" he roared. As she seated herself, ethereal allies flocked to her side, and at her command, the golden dragon, the guardian from below, ascended from the depths of the palace, its presence tipping the scales of battle.</p>
+
+				<h3>The Oni's Undoing</h3>
+				<p>The oni's magic, once an oppressive force, was unraveled by Haldir's mage’s disjunction. Tim and Edam, in a dance of steel and courage, faced the wind yai. With a final, decisive blow, she fell, her demise unleashing a gale that cast us skyward. Shura drifted down unscathed by the magic of his ring. Edam landed on his feet gracefully. Tim had a harder landing, but even he brushed it off. The void yai, now desperate, sought to extinguish Ameiko's nascent reign, but Haldir's protective dome of force held firm. United, with a dragon at our flank, we engaged the void yai in a battle for the ages.</p>
+
+				<h3>Dawn of the Jade Regent</h3>
+				<p>When the dust settled and the last echoes of combat faded, Minkai's people emerged to witness the dawn of a new era. The Jade Throne was no longer a seat of contention but a throne of hope, embraced by its rightful heir. Ameiko stood not just as a ruler, but as a beacon of resilience and prosperity. The tale of our journey, fraught with danger and darkness, concluded with a saga written in light and glory, forever etched in the annals of Minkai.</p>
+
+			<div class="bottomLog"></div>
+		</main>
+
+		<footer>
+			<a href="{{ url_for('jade.book6') }}">Back to Top</a>
+			<p>All Rights Reserved</p>
+		</footer>
+	</body>
+</html>

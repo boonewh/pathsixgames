@@ -23,7 +23,8 @@
             <a href="#" id="navicon"><img src="{{ url_for('shackles.static', filename='images/navicon.png') }}" alt=""></a>
             <ul>
                 <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
-                <li><a href="{{ url_for('shackles.index') }}">Home Page</a></li> 
+                <li><a href="{{ url_for('winterMain.index') }}">Home Page</a></li>
+                <li><a href="{{ url_for('shackles.index') }}">Shackles Home Page</a></li> 
                 <li><a href="{{ url_for('shackles.adventure_log') }}">Adventure Log</a></li>
                 <li><a href="{{ url_for('shackles.rules') }}">Rules Page</a></li>
                 <img src="{{ url_for('shackles.static', filename='images/flagfill.png') }}" alt="pirate flag" id="headerFlag">
@@ -45,7 +46,7 @@
                 <p>
                     Warning! Spoilers for the "Skull & Shackles" Adventure Path.
                 </p>
-                <button onclick="window.location.href='adventure_log.html';">Adventure Log</button>
+                <button onclick="window.location.href='book6';">Adventure Log</button>
             </div>
         </div>
 

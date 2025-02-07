@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Date:   4/14/2023
+    Finished: 5/5/2023
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Pathfinder characters that are played in the PathSix weekly games."/>
+    <title>PathSix Characters</title>
+
+    <link rel="stylesheet" href="{{ url_for('jade.static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <img src="{{ url_for('jade.static', filename='images/pathSixColorLogo.png') }}" alt="The Pathfinder 6">
+        </div>
+        <nav class="navSecond">
+            <a href="#" id="navicon">
+                <img src="{{ url_for('jade.static', filename='images/navicon.png') }}" alt="">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('winterMain.index') }}">Home Page</a></li>
+                <li><a href="{{ url_for('jade.index') }}">Jade Regent Home</a></li>
+                <li><a href="{{ url_for('jade.book6') }}">Adventure Log</a></li>
+                <li><a href="{{ url_for('jade.characters') }}">Characters</a></li>
+                <li><a href="{{ url_for('jade.about') }}">About Us</a></li>
+            </ul>
+        </nav>    
+    </header>
+</body>
+</html>
+
+		<main class="container">
+			<div class="container1">
+				<h1>About Us</h1>
+				<p>
+					In January 1986 a group met for the first time to play a session of Dungeons & Dragons. 
+					Out of the five people at that session, two them are in the group today, 37 years later. 
+				</p>
+		
+				<p>
+					At about the same time, two other members of this group were having regular games with 
+					friends from school. 
+				</p>
+		
+				<p>
+					These four people would eventually all meet and begin playing regular Dungeons & Dragons sessions
+					together. Through the years there have been many others who have come and gone, but we 
+					remember them all. 
+				</p>
+			
+				<p>
+					Our group has known each other for a long time. Even the newest members have known 
+					one of our members for many years. We've been together 
+					through good and bad. Marriages, a divorce, job changes, and more. As I said, the group has lost some
+					members through the years who we miss, but the current group has become close. 
+				</p>
+			
+				<p>
+					We've played so many editions of different games through the years. D&D 1st edition, 2nd, 3rd,
+					3.5. It was only when we hit 4th edition, and couldn't stomach the rot, that we had to go a 
+					different direction. One of our new members back then, still with us 15 years later, offered 
+					to be the storyteller for a game most of us had never heard of: Pathfinder. In reality it was 
+					mostly the game that we had been playing for the past several years, a version of D&D 3.5, 
+					so naturally we loved it. 
+				</p>
+			
+				<p>
+					As we've continued playing Pathfinder, we've decided to stick to the adventure paths and share
+					storytelling duties. Currently three of us take turns running an adventure. 
+				</p>
+			
+				<p>
+					If you look at our house rules and ask &#8220why?&#8221 on anything, know that we discussed our house rules
+					before implementing any of them and came to a consensus. We have tweaked the game to be what
+					we want to play, what we love. And that's the point, isn't it?
+				</p>
+				
+			</div>
+			<div class="container2">
+				<img src="jaderegentImages/shadowcat.jpg" alt="Shadow" id="cat">
+			</div>
+			
+		</main>
+		<div class="bottomLog"></div>
+
+		
+		<footer>
+			<a href="{{ url_for('jade.about') }}">Back to Top</a>
+			<p>All Rights Reserved</p>
+		</footer>
+		<a href="https://www.cssdallas.com">CSS Dallas</a>
+	</body>
+</html>

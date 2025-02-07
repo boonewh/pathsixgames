@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Date:   4/14/2023
+    Finished: 5/5/2023
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Pathfinder characters that are played in the PathSix weekly games."/>
+    <title>PathSix Characters</title>
+
+    <link rel="stylesheet" href="{{ url_for('jade.static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <img src="{{ url_for('jade.static', filename='images/pathSixColorLogo.png') }}" alt="The Pathfinder 6">
+        </div>
+        <nav class="navSecond">
+            <a href="#" id="navicon">
+                <img src="{{ url_for('jade.static', filename='images/navicon.png') }}" alt="">
+            </a>
+            <ul>
+                <li><a href="{{ url_for('winterMain.index') }}">Home Page</a></li>
+                <li><a href="{{ url_for('jade.index') }}">Jade Regent Home</a></li>
+                <li><a href="{{ url_for('jade.book6') }}">Adventure Log</a></li>
+                <li><a href="{{ url_for('jade.characters') }}">Characters</a></li>
+                <li><a href="{{ url_for('jade.about') }}">About Us</a></li>
+            </ul>
+        </nav>    
+    </header>
+
+
+
+<html>
+	</body>
+		<header>
+			<div class="hero">
+				<img src="{{ url_for('jade.static', filename='images/gateHero.webp') }}" alt="Doors to Adventure" class="doors">
+				<div class="heroCenter">
+					<h1>Welcome To Our Game Page!</h1>
+					<h1>"The Jade Regent"</h1>
+				</div>
+				<div class="heroBottom">
+					<h3>Our Adventures in Tian Xia Have Concluded!</h3>
+					<p>
+						Thank you for joining our party of adventurers. They have finished their quest in the Lands of Minkai 
+						and have successfully restored the rightful ruler to the throne. The adventure is chronicled in the 
+						Adventure Log. Enjoy, and we hope you join us in our new adventure, "Skull & Shackles."
+					</p>
+		
+					<h3>Follow Our Party's Journey!</h3>
+					<p>Warning! Spoilers for the "Jade Regent" Adventure Path.</p>
+					<button onclick="window.location.href='adventureLog.html';">Adventure Log</button>
+				</div>
+			</div>
+		</header>
+		
+		<main class="containerIndex">
+			<section class="container1">
+				<article>
+					<h3>The Adventure Path</h3>
+					<a href="{{ url_for('jade.static', filename='images/TianXia-min.png') }}">
+						<img src="{{ url_for('jade.static', filename='images/TianXia-min.png') }}" alt="Tian Xia Map" id="tianMap">
+					</a>
+					<p>We are playing the "Jade Regent" Adventure Path sold by Paizo, Inc.</p>
+					<blockquote>
+						When a decades-old secret is exposed, an unassuming local tavern-owner and a close friend of 
+						the PCs discovers her birthright is to rule one of the ancient Dragon Empires of Tian Xia—the 
+						empire of Minkai. Yet the current ruler of this empire, the mysterious and increasingly cruel 
+						Jade Regent, has no intention of giving up his hold over the throne. In order to save Minkai 
+						from a would-be tyrant, the PCs must not only escort their friend from Varisia to Tian Xia, 
+						braving the frozen horrors of the Crown of the World, but must aid her in gaining the trust 
+						and support of a nation on the edge of anarchy.
+					</blockquote>
+					<cite>&mdash; Paizo Adventure Path Teaser</cite>
+				</article>
+		
+				<br>
+		
+				<article>
+					<h3>Our Game</h3>
+					<p>
+						Our group currently consists of a storyteller and five players. Our house rules are all a result of group 
+						discussion and consensus. Not everyone would enjoy our game, but we have a ton of fun. For example, if you
+						read the house rules, you might notice that we banned a lot of classes, including
+						the basic fighter class. This was based on our group playstyle where min-maxed fighters could dominate the 
+						game. It was not done to punish a single player or even as a negative rule, but an agreement among the group 
+						that by removing this class, we'd have more fun as a whole.
+					</p>
+					<p>
+						Speaking of Gestalt leveling rules, they derive from the D&D 3.5 ruleset. If you have never heard of it, you can 
+						read about the rules here:
+					</p>
+					<div id="gestalt">
+						<a href="https://www.d20srd.org/srd/variant/classes/gestaltCharacters.htm">
+							<img src="{{ url_for('jade.static', filename='images/gestaltLink.png') }}" alt="Gestalt Link" id="gestLink">
+						</a>
+					</div>
+					<figcaption>For the full character sheets, see the <a href="{{ url_for('jade.characters') }}"><b>characters page</b></a>.</figcaption>
+				</article>
+			</section>
+		
+			<section>
+				<h1 class="rotation">The Cast:</h1>
+				<div id="charRotate">
+					<div class="rotator">
+						<img id="rotateImages" src="{{ url_for('jade.static', filename='images/aelfread.png') }}" alt="Characters">
+					</div>
+					<div class="rotatorText">
+						<h2 id="heading">Aelfread</h2>
+						<h5 id="subheading">Gestalt Inquisitor-Ninja</h5>
+						<p id="description">
+							Aelfread is a ghost of the battlefield, stalking his prey invisible and bringing the inquisition of Serenrae upon our foes.
+						</p>
+					</div>    
+				</div>
+				<br>
+				<div>
+					<h3>An excerpt from our last adventure entry:</h3>
+					<h3>The Twilight Throne Room</h3>
+					<p>The aftermath of battle left our minds in a fog, and as clarity returned, it became starkly evident—we were no longer where we had been. The throne room around us, once a kaleidoscope of regal hues, was now a desolate expanse of greys. Ameiko, Sandru, and Edam's loyal hound lay still, as if touched by a sorcerer's cruel hand. In this eerie silence, a voice echoed with dark promise from the shadows.</p>
+				</div>
+				<div id="last-entry-container"></div>
+				<h3><a href="{{ url_for('jade.book6') }}">Click here to see the full Adventure Log</a></h3>
+			</section>
+		
+			<div id="eventHeader"><h1>Event Pictures</h1></div>
+			<section class="events">
+				{% for img in ['adlog1.jpg', 'adlog2.jpg', 'adlog3.jpg', 'adlog4.jpg', 'adlog5.jpg', 'adlog6.jpg'] %}
+				<div>
+					<a target="_blank" rel="noopener" href="{{ url_for('jade.static', filename='images/' + img) }}">
+						<img src="{{ url_for('jade.static', filename='images/' + img) }}" alt="" class="eventPic">
+					</a>
+					<p class="eventDesc"></p>
+				</div>
+				{% endfor %}
+			</section>
+		</main>
+
+		<footer>
+			<a href="{{ url_for('jade.index') }}">Back to Top</a>
+			<p>All Rights Reserved</p>
+		</footer>
+		
+		<script src="{{ url_for('jade.static', filename='js/fetch.js') }}"></script>
+		<script src="{{ url_for('jade.static', filename='js/banner.js') }}" async></script>
+		
+	</body>
+</html>

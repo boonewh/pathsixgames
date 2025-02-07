@@ -1,0 +1,713 @@
+@charset "utf-8";
+@font-face {
+  font-family: Alkatra;
+  src: url("../resources/Alkatra-Bold.ttf") format("truetype");
+}
+/*
+   Main style sheet for the final project
+   date: 3/12/23
+*/
+
+/* Global Variables */
+
+:root {
+  --accentColor: rgb(63, 17, 11);
+  --background: rgb(239, 202, 163);
+  --lightText: antiquewhite;
+  --heroBackground: white;
+}
+
+/* Global Styles */
+address,
+article,
+aside,
+blockquote,
+body,
+cite,
+div,
+dl,
+dt,
+dd,
+em,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+li,
+main,
+nav,
+ol,
+p,
+section,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* Page and Body styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--accentColor);
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: inherit;
+  line-height: 1.2em;
+  background-color: var(--background);
+  margin: 0px auto;
+
+  background-image: url(../jaderegentImages/pagoda2.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 40%;
+}
+
+main {
+  max-width: 70%;
+}
+
+/* Text Styles */
+h1 {
+  color: var(--accentColor);
+  font-size: 2.3em;
+  line-height: 2.4em;
+  font-family: Alkatra, Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h3 {
+  color: rgb(63, 17, 11);
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: Alkatra, Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 10px;
+}
+
+h4 {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+h4::first-letter {
+  font-size: 2rem;
+  color: var(--accentColor);
+  float: left;
+}
+
+p {
+  font-size: 1.1em16px;
+  line-height: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: var(--accentColor);
+}
+a:active,
+a:hover {
+  font-size: 1.2em;
+  color: grey;
+}
+
+/* Button Styles */
+button {
+  margin: 20px 0 30px 25px;
+  width: 200px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  font-family: Alkatra, Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: var(--lightText);
+  background-color: var(--accentColor);
+}
+
+button:active,
+button:hover {
+  background-color: grey;
+}
+
+button:active,
+input[type="submit"]:active {
+  width: 170px;
+  height: 30px;
+  background-color: var(--background);
+  color: var(--accentColor);
+}
+
+/* Header Styles */
+
+header {
+  background-color: var(--background);
+}
+
+.header1 {
+  background-color: var(--heroBackground);
+}
+
+.head img {
+  width: 30%;
+  padding: 10px 0 0 10px;
+}
+
+/* Navigation List Styles */
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+nav ul li {
+  line-height: 2em;
+  width: 100%;
+}
+
+.navFirst ul li a {
+  color: var(--accentColor);
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 2.5em;
+  font-weight: bold;
+}
+
+.navFirst li a:visited,
+.navFirst li a:active,
+.navFirst li a:hover {
+  color: var(--accentColor);
+  line-height: 2.3em;
+}
+
+.navFirst a {
+  background-color: var(--heroBackground);
+}
+
+.navFirst:active,
+header .navFirst a:hover {
+  background-color: var(--accentColor);
+  color: var(--lightText);
+}
+
+.navSecond ul li a {
+  color: var(--lightText);
+  background-color: var(--accentColor);
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 2.5em;
+  font-weight: bold;
+}
+
+.navSecond li a:visited,
+.navSecond li a:active,
+.navSecond li a:hover {
+  color: var(--background);
+  line-height: 2.3em;
+}
+
+.navSecond:active,
+header .navSecond a:hover {
+  background-color: var(--heroBackground);
+  color: var(--accentColor);
+}
+
+/* Hero Styles */
+
+.hero {
+  position: relative;
+}
+
+img.doors {
+  width: 100%;
+}
+
+.heroCenter {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heroBottom {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Quote Styles */
+blockquote {
+  margin: 10px 10px 20px 20px;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+blockquote::after {
+  content: close-quote;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Section Styles */
+
+main {
+  margin: 10px auto;
+}
+
+.containerIndex {
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container1 {
+  flex-basis: 65%;
+  margin: 10px;
+}
+
+.container1 p {
+  margin: 15px 0;
+}
+
+img#tianMap {
+  float: right;
+  width: 40%;
+  margin: -20px 0 0 20px;
+}
+
+.container2 {
+  flex-basis: 30%;
+  margin: 30px 0 20px 30px;
+  text-align: center;
+}
+
+.container2 img {
+  width: 100%;
+  margin-top: 40px;
+}
+
+div.con2 {
+  margin-bottom: 40px;
+}
+
+#gestalt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+figcaption {
+  text-align: center;
+}
+
+/* Javascript Cast Rotation Section */
+
+#charRotate {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.rotation {
+  margin-top: 8%;
+  border-top: 1px solid black;
+}
+
+.rotator {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+}
+
+#rotateImages {
+  width: 100%;
+  padding: 0;
+}
+
+.rotatorText {
+  width: 35%;
+  padding: 65px 0 0 4%;
+  text-align: center;
+}
+/* Event Section */
+
+div#eventHeader {
+  width: 60%;
+}
+
+.events {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.events img {
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.events p {
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+/* Adventure Log Styles */
+
+.adlogs {
+  display: block;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  font-size: 14px;
+}
+
+.logLeftPic {
+  float: left;
+  margin: 15px 10px 0 0;
+}
+
+.logRightPic {
+  float: right;
+  margin: 15px 0 0 10px;
+}
+
+.wide {
+  width: 400px;
+}
+
+.tall {
+  height: 330px;
+}
+
+.extraBig {
+  width: 250px;
+}
+
+.bottomLog {
+  clear: both;
+  margin-bottom: 650px;
+}
+
+/* Character Page */
+
+.column1 {
+  flex-basis: 30%;
+  margin-top: 20px;
+}
+
+.column2 {
+  flex-basis: 30%;
+}
+
+.column3 {
+  flex-basis: 30%;
+  margin-top: 20px;
+}
+
+.column1 p {
+  text-align: center;
+  margin-left: 42%;
+}
+
+.column3 p {
+  text-align: center;
+  margin-right: 35%;
+}
+
+div.column1 img,
+div.column2 img,
+div.column3 img {
+  display: block;
+  width: 50%;
+}
+
+img#logo {
+  width: 100%;
+}
+
+img#star {
+  width: 100%;
+}
+
+img.leftPic {
+  margin: 90px 0 0 46%;
+  -webkit-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  border: black 1px solid;
+}
+
+img.centerPic {
+  margin: 40px 0 0 25%;
+  -webkit-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  border: black 1px solid;
+}
+
+img.rightPic {
+  margin: 90px 0 0 6%;
+  -webkit-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  border: black 1px solid;
+}
+
+.column2 h2,
+.column2 p {
+  text-align: center;
+}
+
+#caravan {
+  width: 90%;
+  margin: 90px 0 20px 15px;
+  -webkit-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 25px 30px 0px rgba(0, 0, 0, 0.75);
+  border: black 1px solid;
+}
+
+p#carav {
+  margin-bottom: 60px;
+}
+
+/* Dice Roller Styles */
+input[type="number"] {
+  width: 50px;
+}
+
+.dice {
+  width: 75%;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  margin: auto;
+}
+
+.dicePic {
+  width: 250px;
+  float: right;
+  border-radius: 125px;
+  margin-right: 320px;
+}
+
+/* Lists on Reference Page */
+ul.reference li {
+  margin: 0 0 3px 25px;
+}
+
+/* footer styles */
+footer {
+  display: flex;
+  background-color: var(--accentColor);
+  color: var(--lightText);
+  width: 100%;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+footer a {
+  color: var(--lightText);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.1em;
+}
+
+/* =============================
+	Mobile Styles: 0 - 900 pixels
+   =============================
+*/
+@media only screen and (max-width: 900px) {
+  main {
+    max-width: 100%;
+  }
+
+  body {
+    background-size: 0%;
+    border: 4px solid main;
+  }
+
+  .head img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  img.doors {
+    width: 100%;
+    margin: 0;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  a#navicon:hover + ul,
+  nav ul:hover {
+    display: block;
+  }
+
+  h1 {
+    line-height: 1.1em;
+  }
+
+  button:active,
+  button:hover {
+    width: 200px;
+    height: 30px;
+  }
+
+  .hero {
+    position: static;
+    padding: 0;
+    margin: 0;
+    transform: none;
+  }
+
+  .heroCenter {
+    position: static;
+    width: 100%;
+    font-size: 0.9em;
+    padding: 0;
+    margin: 0;
+    transform: none;
+  }
+
+  .heroBottom {
+    position: static;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transform: none;
+  }
+
+  .container1,
+  .container2,
+  .events {
+    flex-basis: 100%;
+    margin: 0;
+    padding: 1px;
+  }
+
+  /* Character Page Styles */
+
+  .column1,
+  .column2,
+  .column3 {
+    flex-basis: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 1px;
+  }
+
+  .column1 p,
+  .column3 p {
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Home Page Styles */
+
+  img#tianMap {
+    float: none;
+    width: 100%;
+    margin: 1px;
+  }
+
+  #gestLink {
+    width: 100%;
+  }
+
+  .rotator {
+    width: 100%;
+  }
+
+  .rotatorText {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .events {
+    width: 100%;
+    display: block;
+  }
+
+  /* Mobile Adventure Log Pics */
+  .logLeftPic img,
+  .logRightPic img,
+  .logLeftPic a,
+  .logRightPic a {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  div.column1 img,
+  div.column2 img,
+  div.column3 img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Dice Page Styles */
+
+  .dicePic {
+    float: none;
+  }
+
+  footer {
+    flex-basis: 100%;
+  }
+}
+
+/* ============================================
+   Tablet and Desktop Styles: 781px and greater 
+   ============================================
+*/
+
+@media only screen and (min-width: 901px) {
+  a#navicon {
+    display: none;
+  }
+}
