@@ -227,6 +227,7 @@ blockquote::after {
   align-items: center;
   box-shadow: inset 0 -4px 8px #ffff(0, 0, 0, 0.2);
   padding: 20px;
+  padding-bottom: 70px;
 }
 
 .container2 img {
@@ -238,8 +239,8 @@ blockquote::after {
 .container4 {
   display: flex;
   background-size: 45%;
-  flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 150px;
 }
 
 @keyframes pop {
@@ -258,67 +259,54 @@ blockquote::after {
 }
 
 .container4 img {
-  width: 40%;
+  width: 100%;
   opacity: 0;
   cursor: pointer;
   min-height: 330px;
 }
 
-.finn,
-.kasmira,
-.red,
-.varen {
+.aelira,
+.alaric,
+.joshua,
+.ivan {
   display: none; /* Hidden by default */
   position: absolute; /* Positioned absolutely */
-  max-width: 450px;
-  top: 10%; /* Centered vertically */
-  left: 35%; /* Centered horizontally */
+  max-width: 800px;
   transform: translate(-50%, -50%); /* Offset the centering */
   z-index: 10; /* Higher z-index to ensure they appear above other content */
 }
 
-.subCon1 figure {
-  display: flex;
-  width: 30%;
-  margin: 25px;
-  align-items: center;
+.aelira {
+  left: 25%; /* Centered horizontally */
 }
 
-.subCon2 figure {
-  display: flex;
-  width: 30%;
-  margin: 25px 0;
-  align-items: center;
+.alaric {
+  left: 50%; /* Centered horizontally */
+}
+
+.joshua {
+  left: 10%; /* Centered horizontally */
+}
+
+.ivan {
+  left: 35%; /* Centered horizontally */
 }
 
 .subCon1 img,
 .subCon2 img {
   box-shadow: 10px 25px 30px 0px rgba(128, 128, 128, 0.6);
-  margin: 10px;
 }
 
 .subCon1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  padding-left: 30px;
 }
 
 .subCon2 {
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
-
-#red,
-#finn {
-  display: flex;
-  flex-direction: row; /* Align items in a row to fix column-reverse from mobile */
-}
-
-#red figcaption,
-#finn figcaption {
-  text-align: right;
 }
 
 figcaption {
@@ -328,6 +316,13 @@ figcaption {
 
 figure:hover + img {
   display: block;
+}
+
+figcaption a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: var(--transition);
 }
 
 .empty {

@@ -40,51 +40,52 @@
             <a href="https://www.d20srd.org/srd/variant/classes/gestaltCharacters.htm"><img src="{{ url_for('static', filename='images/gestalt-link.jpg') }}" alt="Link to Gestalt characters rules"></a>
             <a href="https://www.sortekanin.com/collection/items/"><img src="{{ url_for('static', filename='images/SorteKanin_link.jpg') }}" alt="SorteKanin Treasure Database"></a>
         </aside>
-    
+
+        <h1>The Party</h1>
         <div class="container4 pop">
-            <h1>The Crew</h1>
             <div class="subCon1">
                 <figure>
-                    <img src="/images/Kasmira.jpg" alt="Kasmira">
+                    <img src="{{ url_for('static', filename='images/aelira.jpg') }}" alt="Aelira character portrait">
                     <figcaption>
-                        <p>Kasmira de la Torre</p>
-                        <p>Human Gunslinger/Rogue</p>
-                        <a href="/images/kasmira-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                        <p>Aelira Kaldren</p>
+                        <p>Human Witch/Kineticist</p>
+                        <a href="{{ url_for('static', filename='images/aelira.pdf') }}" target="_blank"><u>Character Sheet</u></a>
                     </figcaption>
                 </figure>
-                <img src="/images/Kasmira.jpg" alt="Kasmira" class="kasmira">
+                <img src="{{ url_for('static', filename='images/aelira.jpg') }}" alt="Aelira" class="aelira">
         
-                <figure id="finn">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/alaric.jpg') }}" alt="Alaric">
                     <figcaption>
-                        <p>Finn</p>
-                        <p>Undine Kineticist/Rogue</p>
-                        <a href="/images/finn-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                        <p>Alaric Aethelred</p>
+                        <p>Human Gunslinger/Inquistitor</p>
+                        <a href="{{ url_for('static', filename='images/alaric.pdf') }}" target="_blank"><u>Character Sheet</u></a>
                     </figcaption>
-                    <img src="/images/Finn.jpg" alt="Finn">
                 </figure>
-                <img src="/images/Finn.jpg" alt="Finn" class="finn">
+                <img src="{{ url_for('static', filename='images/alaric.jpg') }}" alt="Alaric character sheet" class="alaric ">
             </div>
             <div class="empty"></div>
             <div class="subCon2">
-                <figure id="red">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/joshua.jpg') }}" alt="Joshua">
                     <figcaption>
-                        <p>Red</p>
-                        <p>Dwarven Inquisitor/War Priest</p>
-                        <a href="/images/red-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                        <p>Joshua</p>
+                        <p>Human Druid/Monk</p>
+                        <a href="{{ url_for('static', filename='images/joshua.pdf') }}" target="_blank"><u>Character Sheet</u></a>
                     </figcaption>
-                    <img src="/images/red.jpg" alt="Red">
                 </figure>
-                <img src="/images/red.jpg" alt="Red" class="red">
+                <img src="{{ url_for('static', filename='images/joshua.jpg') }}" alt="Joshua character sheet" class="joshua ">
         
                 <figure>
-                    <img src="/images/Varen2.jpg" alt="Varen">
+                    <img src="{{ url_for('static', filename='images/ivan.jpg') }}" alt="Ivan">
                     <figcaption>
-                        <p>Varen Galashantar</p>
-                        <p>Aquatic Elf Gunslinger/Magus</p>
-                        <a href="/images/varen-character.pdf" target="_blank"><u>Character Sheet</u></a>
+                        <p>Ivan</p>
+                        <p>Human Inquistitor/Wizard</p>
+                        <a href="{{ url_for('static', filename='images/ivan.pdf') }}" target="_blank"><u>Character Sheet</u></a>
                     </figcaption>
+                    
                 </figure>
-                <img src="/images/Varen2.jpg" alt="Varen" class="varen">
+                <img src="{{ url_for('static', filename='images/ivan.jpg') }}" alt="Ivan character sheet" class="ivan ">
             </div>
         </div>
         <hr>
@@ -119,5 +120,7 @@
     </main>
 {% endblock %}
 
-{% block scripts %}<script src="{{ url_for('static', filename='js/scrollEffect.js') }}"></script>{% endblock %}
-{% block styles %} <script src="{{ url_for('static', filename='js/blog_fetch.js') }}" {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scrollEffect.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blog_fetch.js') }}"></script>
+{% endblock %}
