@@ -1,0 +1,15 @@
+<div id="dice-results">
+    {% if results %}
+        <h3>Results:</h3>
+        <ul>
+            {% for dice_type, rolls in results.items() %}
+                {% if rolls %}
+                    <li><strong>{{ dice_type }}</strong>: {{ rolls|join(", ") }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% if grand_total %}
+            <h3>Grand Total of All Rolls: {{ grand_total }}</h3>
+        {% endif %}
+    {% endif %}
+</div>

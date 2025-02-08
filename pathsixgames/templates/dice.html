@@ -2,81 +2,91 @@
 
 {% block title %}PathSix Dice Roller{% endblock %}
 
-{% block meta_description %}<meta name="description" content="Dice roller page for any game. d4, d6, d8, d10, d20 or d100 dice rolls.">{% endblock %}
-
 {% block content %}
-    <main class="diceMain">
-        <h1>Dice Roller</h1>
-        <div class="dice">
-            <h3>Roll d4</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d4Num" value="1" min="1">
-            <button class="roll-button" data-type="d4">Roll</button>
-            <h3 id="d4Results">Results:</h3>
-            <h3 id="d4Total"></h3>
-        </div>
-    
-        <div class="dice">
-            <h3>Roll d6</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d6Num" value="1" min="1">
-            <button class="roll-button" data-type="d6">Roll</button>
-            <h3 id="d6Results">Results:</h3>
-            <h3 id="d6Total"></h3>
-        </div>
-    
-        <div class="dice">
-            <h3>Roll d8</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d8Num" value="1" min="1">
-            <button class="roll-button" data-type="d8">Roll</button>
-            <h3 id="d8Results">Results:</h3>
-            <h3 id="d8Total"></h3>
-        </div>
-    
-        <div class="dice">
-            <h3>Roll d10</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d10Num" value="1" min="1">
-            <button class="roll-button" data-type="d10">Roll</button>
-            <h3 id="d10Results">Results:</h3>
-            <h3 id="d10Total"></h3>
-        </div>
-    
-        <div class="dice">
-            <h3>Roll d12</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d12Num" value="1" min="1">
-            <button class="roll-button" data-type="d12">Roll</button>
-            <h3 id="d12Results">Results:</h3>
-            <h3 id="d12Total"></h3>
-        </div>
-    
-        <div class="dice">
-            <h3>Roll d20</h3>
-            <p>How many would you like to roll?</p>
-            <input type="number" id="d20Num" value="1" min="1">
-            <button class="roll-button" data-type="d20">Roll</button>
-            <h3 id="d20Results">Results:</h3>
-            <h3 id="d20Total"></h3>
-        </div>
-
-        <div class="dice">
-        <h3>Roll Percentile</h3>
-        <p>How many would you like to roll?</p>
-        <input type="number" id="percentileNum" value="1" min="1">
-        <button class="roll-button" data-type="percentile">Roll</button>
-        <h3 id="percentileResults">Results:</h3>
-        <h3 id="percentileTotal"></h3>
-        </div>
-    
-        <h3 id="total">Total of All Rolls: 0</h3>
-    
-        <br>
-        <button id="clearResults">Clear Results</button>
+<main class="diceMain">
+    <h1>Dice Roller</h1>
+    <form method="POST" id="dice-form">
+        {{ form.hidden_tag() }}
         
-    </main>
-    {% block scripts %}<script src="{{ url_for('static', filename='js/diceRoller.js') }}"></script>{% endblock %}
-    
+        {% for dice_type in ["d4", "d6", "d8", "d10", "d12", "d20", "percentile"] %}
+        <div class="dice">
+            {{ form[dice_type].label }} {{ form[dice_type]() }}
+            <button type="button" class="roll-button" data-dice="{{ dice_type }}">
+                Roll {{ dice_type }}
+            </button>
+            <div class="dice-result" id="result-{{ dice_type }}">
+                {% if results[dice_type] %}
+                    {{ results[dice_type]|join(", ") }}
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
 
+        <button type="button" id="clearButton">Clear Results</button>
+
+        <div id="total-result">
+            {% if grand_total %}
+                <h3>Grand Total of All Rolls: {{ grand_total }}</h3>
+            {% endif %}
+        </div>
+    </form>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("dice-form");
+    const totalDiv = document.getElementById("total-result");
+
+    // Handle all roll buttons
+    document.querySelectorAll('.roll-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const diceType = this.dataset.dice;
+            const formData = new FormData(form);
+            formData.append('roll_' + diceType, 'roll');
+            
+            fetch('/dice', {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData
+            })
+            .then(response => response.json())  // Changed to expect JSON response
+            .then(data => {
+                // Update the specific dice result
+                document.getElementById('result-' + diceType).textContent = 
+                    data.results[diceType].join(", ");
+                
+                // Update total
+                totalDiv.innerHTML = `<h3>Grand Total of All Rolls: ${data.grand_total}</h3>`;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+
+    // Handle clear button
+    document.getElementById('clearButton').addEventListener('click', function() {
+        const formData = new FormData();
+        formData.append('clear', 'clear');
+        
+        fetch('/dice', {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: formData
+        })
+        .then(response => response.json())  // Changed to expect JSON response
+        .then(data => {
+            // Clear all individual results
+            document.querySelectorAll('.dice-result').forEach(div => {
+                div.textContent = '';
+            });
+            // Clear total
+            totalDiv.innerHTML = '';
+        })
+        .catch(error => console.error('Error:', error));
+    });
+});
+</script>
 {% endblock %}
