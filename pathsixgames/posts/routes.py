@@ -52,8 +52,6 @@ def dashboard():
 @login_required
 def update_post(post_id):
     post = Post.query.get_or_404(post_id)
-    if post.author != current_user:
-        abort(403)
 
     post_form = PostForm()
     if post_form.validate_on_submit():
@@ -68,14 +66,11 @@ def update_post(post_id):
 
     return render_template('post_form.html', post_form=post_form, post=post)
 
+
 @posts.route('/post/<int:post_id>/delete', methods=['POST'])
 @login_required
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
-    
-    # Ensure only the author can delete the post
-    if post.author != current_user:
-        abort(403)  # Forbidden
 
     # If there's an associated image, delete it from the filesystem
     if post.image:
