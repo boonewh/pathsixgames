@@ -7,6 +7,7 @@
 {% block content %}
     <main>
         <div class="hero">
+            <img src="{{ url_for('static', filename='images/baba_yaga_hero.jpg') }}" alt="Baba Yaga header image" class="heroImg">
             <div class="heroWelcome">
                 <h1>Welcome To Our Game Page!</h1>
                 <h2>"Reign of Winter"</h2>
@@ -23,7 +24,7 @@
         </div>
     
         <section class="container1">
-            <div id="shackles">
+            <div id="advenPath">
                 <h3 >The Adventure Path</h3>
                 <p>We are playing the "Reign of Winter" Adventure Path sold by Paizo, Inc.</p>
                     <blockquote>
@@ -33,7 +34,7 @@
                         &mdash; Paizo Adventure Path Teaser
                     </cite>
             </div>
-            <a href="{{ url_for('static', filename='images/heldren.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/heldren.jpg') }}" alt="Shackes Map" id="The town of Heldren, starting point for the adventure."></a>
+            <a href="{{ url_for('static', filename='images/heldren.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/heldren.jpg') }}" alt="The town of Heldren, starting point for the adventure." id="currentMap"></a>
         </section>
     
         <aside class="container2">
@@ -122,5 +123,4 @@
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/scrollEffect.js') }}"></script>
-<script src="{{ url_for('static', filename='js/blog_fetch.js') }}"></script>
 {% endblock %}

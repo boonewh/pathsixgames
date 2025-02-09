@@ -45,51 +45,63 @@ h2 {
   font-size: 1.8em;
 }
 
-/* Navigation Styles */
-
+/* Desktop Navigation Base Styles */
 nav {
   display: flex;
-  justify-content: space-between; /* Space between logo and nav links */
-  align-items: center; /* Center the nav links vertically */
-  margin: 0;
-  padding: 5px 10px; /* Minimal padding */
-  height: auto; /* Make the section as small as possible */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary);
+  position: relative;
 }
 
-nav ul {
+#mainLogo {
+  width: 18%;
+}
+
+.nav-menu ul {
   display: flex;
   list-style: none;
-  font-weight: bold;
   margin: 0;
   padding: 0;
+  gap: 2rem;
 }
 
-nav ul li {
-  margin: 0 20px; /* Reduce spacing between nav items */
-}
-
-nav ul li a {
+.nav-menu ul li a {
   color: var(--text);
   text-decoration: none;
   font-size: 1.1em;
   transition: var(--transition);
 }
 
-nav ul li a:hover {
+.nav-menu ul li a:hover {
   color: var(--accent);
-  text-decoration: underline;
 }
 
-/* Style the dropdown */
+/* Hide hamburger by default */
+#nav-toggle {
+  display: none;
+}
+
+/* Dropdown Styles FOR PAST ADVENTURES DON'T TOUCH */
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-menu {
+/* Base dropdown styles */
+.nav-menu .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-menu .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #333;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary);
   min-width: 150px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -97,26 +109,21 @@ nav ul li a:hover {
   padding: 0;
 }
 
-.dropdown-menu li {
+/* Style the menu items */
+.nav-menu .dropdown-menu li {
   padding: 10px;
 }
 
-.dropdown-menu li a {
-  color: white;
+.nav-menu .dropdown-menu li a {
+  color: var(--text);
   text-decoration: none;
   display: block;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.navicon {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-  color: var(--text);
+/* Show menu ONLY on hover */
+.nav-menu .dropdown:hover .dropdown-menu {
+  display: block !important;
+  visibility: visible;
 }
 
 .miniLogo {
@@ -135,18 +142,21 @@ nav ul li a:hover {
   width: 6%;
 }
 
-/* Ensure nav links are closer to the right */
 nav ul {
   margin-left: auto; /* Push nav links to the right */
 }
 
 /* Hero Styles */
 
+.heroImg {
+  display: none;
+}
+
 .hero {
   width: 100%;
   height: 100vh;
   padding-top: 20px;
-  background: url(../images/baba_yaga_hero.jpg);
+  background-image: url(../images/baba_yaga_hero.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -244,13 +254,13 @@ blockquote::after {
 }
 
 @keyframes pop {
-  from {
-    transform: scale(0.8) translateY(50px);
-    opacity: 0;
+  0% {
+      transform: scale(0.8) translateY(30px);
+      opacity: 0;
   }
-  to {
-    transform: scale(1) translateY(0px);
-    opacity: 1;
+  100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
   }
 }
 
@@ -258,11 +268,15 @@ blockquote::after {
   animation: pop 0.5s ease-in-out forwards;
 }
 
-.container4 img {
+.container4 figure img {
   width: 100%;
-  opacity: 0;
-  cursor: pointer;
   min-height: 330px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.container4 figure img.visible {
+  opacity: 1;
 }
 
 .aelira,
@@ -277,19 +291,19 @@ blockquote::after {
 }
 
 .aelira {
-  left: 25%; /* Centered horizontally */
+  left: 55%; /* Centered horizontally */
 }
 
 .alaric {
-  left: 50%; /* Centered horizontally */
+  left: 55%; /* Centered horizontally */
 }
 
 .joshua {
-  left: 10%; /* Centered horizontally */
+  left: 5%; /* Centered horizontally */
 }
 
 .ivan {
-  left: 35%; /* Centered horizontally */
+  left: 5%; /* Centered horizontally */
 }
 
 .subCon1 img,
@@ -789,18 +803,106 @@ form div:last-child {
 
 @media screen and (max-width: 768px) {
   /* Navigation Styles */
-  nav ul {
-    display: none; /* Hide nav links for mobile */
+
+  #mainLogo {
+    width: 50%;
   }
 
-  .navicon {
-    display: block; /* Show navicon for mobile */
+  #nav-toggle {
+      display: block;
+      cursor: pointer;
+      z-index: 1001;
   }
 
+  #nav-toggle img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--primary);
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+  }
+
+  .nav-menu.active {
+      display: block;
+  }
+
+  .nav-menu ul {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: 1rem;
+    display: block;
+  }
+
+  /* Hero Image */
+
+  .heroImg {
+    display: block;
+    position: relative;
+    width: 130%; 
+    max-width: none; 
+    left: -30%; 
+    overflow-x: hidden; 
+    object-fit: cover; 
+    object-position: left; 
+  }
+
+  .hero {
+    background-image: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  .heroWelcome {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Main Body */
+
+  .container1 {
+    flex-direction: column;
+  }
+
+  #currentMap,
+  #advenPath{
+    width: 100%;
+  }
+
+  /* Characters */
+
+  .container4,
+  .subCon1,
+  .subCon2 {
+    flex-direction: column;
+  }
+
+
+  figure:hover ~ img {
+    display: none !important;
+  }
+
+  
+
+  /* dice page */
   .dice-container {
       grid-template-columns: 1fr; /* Single column layout for small screens */
   }
-
 
   /* Adventure Log Responsive Styles */
   .blog {
