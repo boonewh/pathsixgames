@@ -11,7 +11,11 @@ posts = Blueprint('posts', __name__)
 
 @posts.route("/book1")
 def book1():
-    posts = Post.query.all()
+    order = request.args.get('order', 'newest')
+    if order == 'oldest':
+        posts = Post.query.order_by(Post.date_posted.asc()).all()
+    else:  # defaults to newest
+        posts = Post.query.order_by(Post.date_posted.desc()).all()
     return render_template('RoW_book1.html', posts=posts)
 
 

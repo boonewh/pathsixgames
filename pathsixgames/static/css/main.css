@@ -379,14 +379,14 @@ figcaption a {
 
 .blog .left {
   float: left;
-  width: 15%;
+  width: 35%;
   margin-right: 20px;
   margin-bottom: 10px;
 }
 
 .blog .right {
   float: right;
-  width: 15%;
+  width: 35%;
   margin-left: 20px;
   margin-bottom: 10px;
 }
@@ -395,6 +395,54 @@ figcaption a {
   text-align: start;
   font-size: 1.4em;
   font-weight: bold;
+}
+
+/* Drop down menu styles */
+
+/* Container for the sorting form */
+
+.sorting {
+  display: flex;
+}
+
+.sort-form {
+  margin: 20px 0;
+  width: 15%;
+  margin-left: auto;
+}
+
+/* Styling for the label */
+.sort-form label {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #333;
+}
+
+/* Styling for the select element */
+.sort-form select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Remove default appearance */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* Adding a custom dropdown arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'%3E%3Cpath fill='%23999' d='M7 10L0 0h14z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+/* Focus state for the select element */
+.sort-form select:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Dice Roller Styles - Contained to .diceMain */

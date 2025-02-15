@@ -7,6 +7,15 @@
 {% block content %}
     <main class="blog">
         <h1>Book 1: "The Snows of Summer"</h1>
+        <div class="sorting">
+            <form method="GET" class="sort-form">
+                <label for="order">Sort posts:</label>
+                <select name="order" id="order" onchange="this.form.submit()">
+                    <option value="newest" {% if request.args.get('order', 'newest') == 'newest' %}selected{% endif %}>Newest on Top</option>
+                    <option value="oldest" {% if request.args.get('order') == 'oldest' %}selected{% endif %}>Oldest on Top</option>
+                </select>
+            </form>
+        </div>
         {% for post in posts %}
         <article class="entry">
             <h2>{{ post.title }}</h2>
