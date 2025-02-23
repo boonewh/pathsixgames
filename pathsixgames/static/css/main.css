@@ -368,6 +368,12 @@ figcaption a {
   flex-wrap: wrap;
 }
 
+.gallery-container img {
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px;
+}
+
 /* Adventure Log Styles */
 
 .blog {

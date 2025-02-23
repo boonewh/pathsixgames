@@ -146,6 +146,15 @@
 			<p>All Rights Reserved</p>
 		</footer>
 		
+		<script type="application/json" id="banner-data">
+			{{ [
+				url_for('jade.static', filename='images/aelfread.png'),
+				url_for('jade.static', filename='images/edam.png'),
+				url_for('jade.static', filename='images/haldir.png'),
+				url_for('jade.static', filename='images/shura.png'),
+				url_for('jade.static', filename='images/tim.png')
+			] | tojson }}
+		</script>
 		<script src="{{ url_for('jade.static', filename='js/fetch.js') }}"></script>
 		<script src="{{ url_for('jade.static', filename='js/banner.js') }}" async></script>
 		
