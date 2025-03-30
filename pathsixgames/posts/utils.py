@@ -14,7 +14,7 @@ def save_image(image_file):
     image = ImageOps.exif_transpose(image)  # This fixes the orientation
 
     # Calculate aspect ratio-preserving dimensions
-    max_size = (300, 300)
+    max_size = (800, 800)
     image.thumbnail(max_size, Image.Resampling.LANCZOS)  # LANCZOS provides better quality
     
     # Convert image to RGB if needed
