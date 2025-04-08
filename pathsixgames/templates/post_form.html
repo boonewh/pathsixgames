@@ -24,6 +24,10 @@
         <form method="post" enctype="multipart/form-data">
             {{ post_form.hidden_tag() }}
             <div>
+                {{ post_form.book.label }}<br>
+                {{ post_form.book }}<br>
+            </div>
+            <div>
                 {{ post_form.title.label }}<br>
                 {{ post_form.title }}<br>
             </div>

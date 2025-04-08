@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}PathSix Games | {{ book.title }}{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Adventure Log for {{ book.title }} in the Reign of Winter adventure path.">
+{% endblock %}
+
+{% block content %}
+<main class="blog">
+    <h1>{{ book.title }}</h1>
+    <div class="sorting">
+        <form method="get" class="sort-form">
+            <label for="sort">Sort posts:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="oldest" {% if sort_order == 'oldest' %}selected{% endif %}>Oldest on Top</option>
+                <option value="newest" {% if sort_order == 'newest' %}selected{% endif %}>Newest on Top</option>
+            </select>
+        </form>        
+    </div>
+
+    <!-- Pagination-style Book Links -->
+    <div class="book-pagination">
+        <div><p><i>Books:</i></p></div>
+        <div>
+            <a href="{{ url_for('posts.book', slug='snows-of-summer') }}" class="page-box {% if book.slug == 'snows-of-summer' %}active{% endif %}">1</a>
+            <a href="{{ url_for('posts.book', slug='shackled-hut') }}" class="page-box {% if book.slug == 'shackled-hut' %}active{% endif %}">2</a>
+        </div>
+    </div>
+
+    {% for post in posts %}
+    <article class="entry">
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.date_posted.strftime('%B %d, %Y') }}</h3>
+
+        {% if post.image %}
+            <img src="{{ url_for('static', filename='images/' + post.image) }}"
+                 class="{% if loop.index0 % 2 == 0 %}left{% else %}right{% endif %}">
+        {% endif %}
+
+        {% for paragraph in post.content.split('\n') if paragraph.strip() %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+
+        {% if current_user.is_authenticated %}
+        <div class="admin-actions">
+            <a href="{{ url_for('posts.update_post', post_id=post.id) }}" class="admin-edit">Edit</a>
+            <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                <button type="submit" class="admin-delete">Delete</button>
+            </form>
+        </div>
+        {% endif %}
+
+        <hr>
+    </article>
+    {% endfor %}
+    <!-- Pagination-style Book Links -->
+    <div class="book-pagination">
+        <div><p><i>Books:</i></p></div>
+        <div>
+            <a href="{{ url_for('posts.book', slug='snows-of-summer') }}" class="page-box {% if book.slug == 'snows-of-summer' %}active{% endif %}">1</a>
+            <a href="{{ url_for('posts.book', slug='shackled-hut') }}" class="page-box {% if book.slug == 'shackled-hut' %}active{% endif %}">2</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

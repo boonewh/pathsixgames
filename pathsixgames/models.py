@@ -33,6 +33,16 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
     
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    slug = db.Column(db.String(100), unique=True, nullable=False)
+
+    posts = db.relationship('Post', backref='book', lazy=True)
+
+    def __repr__(self):
+        return f"Book('{self.title}', '{self.slug}')"
+    
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -40,6 +50,7 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=False)
     image = db.Column(db.String(100), nullable=True)  # Add this
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    book_id = db.Column(db.Integer, db.ForeignKey('book.id'), nullable=False)
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"

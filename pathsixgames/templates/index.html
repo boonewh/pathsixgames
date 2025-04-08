@@ -19,7 +19,7 @@
                 <p>
                     Warning! Spoilers for the "Reign of Winter" Adventure Path.
                 </p>
-                <button onclick="window.location.href='book1';">Adventure Log</button>
+                <button onclick="window.location.href='/book/snows-of-summer';">Adventure Log</button>
             </div>
         </div>
     
@@ -34,7 +34,7 @@
                         &mdash; Paizo Adventure Path Teaser
                     </cite>
             </div>
-            <a href="{{ url_for('static', filename='images/heldren.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/heldren.jpg') }}" alt="The town of Heldren, starting point for the adventure." id="currentMap"></a>
+            <a href="{{ url_for('static', filename='images/irrisen.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/irrisen.jpg') }}" alt="Irrisen map, the current area of the adventure." id="currentMap"></a>
         </section>
     
         <aside class="container2">
@@ -100,7 +100,7 @@
                     <p>{{ first_paragraph }}</p>
             
                     <div class="blog2">
-                        <p>You can find our entire story in the <a href="{{ url_for('posts.book1') }}">Adventure Log</a></p>
+                        <p>You can find our entire story in the <a href="{{ url_for('posts.book', slug='snows-of-summer') }}">Adventure Log</a></p>
                     </div>
                 </div>
             {% else %}
@@ -108,16 +108,240 @@
             {% endif %}
         </section>
         <hr>
+        <!-- HTML Structure for the Carousel. NOTE: CSS is here to make sure I like it in all formats. Move it to main.css-->
         <section class="gallery">
             <h2>Gallery</h2>
-            <div class="gallery-container">
-                {% for img in images %}
-                    <img src="{{ url_for('static', filename='images/' + img.image) }}" alt="Gallery Image">
-                {% else %}
-                    <p>No images uploaded yet.</p>
-                {% endfor %}
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    {% for img in images %}
+                        <div class="carousel-slide">
+                            <img src="{{ url_for('static', filename='images/' + img.image) }}" alt="Gallery Image">
+                        </div>
+                    {% else %}
+                        <div class="carousel-empty">
+                            <p>No images uploaded yet.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Navigation Controls -->
+                {% if images %}
+                    <button class="carousel-button prev-button" aria-label="Previous image">&lt;</button>
+                    <button class="carousel-button next-button" aria-label="Next image">&gt;</button>
+                    
+                    <!-- Dots for navigation -->
+                    <div class="carousel-dots">
+                        {% for img in images %}
+                            <span class="dot" data-index="{{ loop.index0 }}"></span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
-        </section>      
+        </section>
+
+        <!-- CSS Styling for the Carousel -->
+        <!-- CSS Styling for the Carousel -->
+        <style>
+            .carousel-container {
+                position: relative;
+                max-width: 800px;
+                margin: 0 auto;
+                overflow: hidden;
+                background-color: #2a2a2a; /* Match your dark background */
+            }
+            
+            .carousel-track {
+                display: flex;
+                transition: transform 0.5s ease;
+                height: 500px; /* Set a fixed height for the track */
+            }
+            
+            .carousel-slide {
+                min-width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 40px; /* Add padding to account for the arrows */
+            }
+            
+            .carousel-slide img {
+                max-width: 100%;
+                max-height: 100%;
+                height: auto;
+                width: auto;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            .carousel-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 10;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                transition: all 0.2s ease;
+            }
+            
+            .carousel-button:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+                transform: translateY(-50%) scale(1.1);
+            }
+            
+            .prev-button {
+                left: 10px;
+            }
+            
+            .next-button {
+                right: 10px;
+            }
+            
+            .carousel-dots {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .dot {
+                height: 10px;
+                width: 10px;
+                background-color: #bbb;
+                border-radius: 50%;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+            
+            .dot.active {
+                background-color: #717171;
+            }
+            
+            .carousel-empty {
+                width: 100%;
+                padding: 40px;
+                text-align: center;
+                background-color: #f8f8f8;
+            }
+        </style>
+
+        <!-- JavaScript for Carousel Functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const track = document.querySelector('.carousel-track');
+                const slides = document.querySelectorAll('.carousel-slide');
+                const nextButton = document.querySelector('.next-button');
+                const prevButton = document.querySelector('.prev-button');
+                const dots = document.querySelectorAll('.dot');
+                
+                if (!track || slides.length === 0) return; // Exit if no carousel or slides
+                
+                let currentIndex = 0;
+                
+                // Set first dot as active
+                if (dots.length > 0) {
+                    dots[0].classList.add('active');
+                }
+                
+                // Update carousel position
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Update active dot
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+                
+                // Next slide handler
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateCarousel();
+                }
+                
+                // Previous slide handler
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateCarousel();
+                }
+                
+                // Event listeners for buttons
+                if (nextButton) {
+                    nextButton.addEventListener('click', nextSlide);
+                }
+                
+                if (prevButton) {
+                    prevButton.addEventListener('click', prevSlide);
+                }
+                
+                // Event listeners for dots
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowRight') {
+                        nextSlide();
+                    } else if (e.key === 'ArrowLeft') {
+                        prevSlide();
+                    }
+                });
+                
+                // Touch swipe functionality
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                track.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+                
+                track.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+                
+                function handleSwipe() {
+                    if (touchEndX < touchStartX - 50) {
+                        nextSlide(); // Swipe left, go next
+                    } else if (touchEndX > touchStartX + 50) {
+                        prevSlide(); // Swipe right, go previous
+                    }
+                }
+                
+                // Optional: Auto-play functionality
+                // Uncomment the following code if you want auto-play
+                /*
+                let autoplayInterval;
+                
+                function startAutoplay() {
+                    autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+                }
+                
+                function stopAutoplay() {
+                    clearInterval(autoplayInterval);
+                }
+                
+                // Start autoplay on page load
+                startAutoplay();
+                
+                // Pause autoplay on hover
+                track.addEventListener('mouseenter', stopAutoplay);
+                track.addEventListener('mouseleave', startAutoplay);
+                */
+            });
+        </script>      
     </main>
 {% endblock %}
 

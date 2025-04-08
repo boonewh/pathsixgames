@@ -33,7 +33,7 @@ def enforce_gallery_limit():
     # Count current images
     image_count = GalleryImage.query.count()
 
-    if image_count > 10:
+    if image_count > 30:
         # Get the oldest image
         oldest_image = GalleryImage.query.order_by(GalleryImage.date_uploaded.asc()).first()
         
