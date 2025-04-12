@@ -3,41 +3,231 @@
 {% block title %}PathSix Dice Roller{% endblock %}
 
 {% block content %}
-<main class="diceMain">
+<main class="dice-roller-container">
     <h1>Dice Roller</h1>
+    
+    <div class="roller-instructions">
+        <p>Roll dice by selecting the number of dice to roll and clicking the "Roll" button. Results will be saved until cleared.</p>
+    </div>
+    
+    <div class="grand-total-display">
+        <h2>Grand Total: <span id="grand-total">{{ grand_total }}</span></h2>
+        <button type="button" id="clear-all-button" class="btn-danger">Clear All Results</button>
+    </div>
+    
     <form method="POST" id="dice-form">
         {{ form.hidden_tag() }}
         
-        {% for dice_type in ["d4", "d6", "d8", "d10", "d12", "d20", "percentile"] %}
-        <div class="dice">
-            {{ form[dice_type].label }} {{ form[dice_type]() }}
-            <button type="button" class="roll-button" data-dice="{{ dice_type }}">
-                Roll {{ dice_type }}
-            </button>
-            <div class="dice-result" id="result-{{ dice_type }}">
-                {% if results[dice_type] %}
-                    {{ results[dice_type]|join(", ") }}
-                {% endif %}
+        <div class="dice-grid">
+            {% for dice_type in ["d4", "d6", "d8", "d10", "d12", "d20", "percentile"] %}
+            <div class="dice-card" id="card-{{ dice_type }}">
+                <div class="dice-header">
+                    <h3>{{ dice_type }}</h3>
+                    <div class="dice-controls">
+                        {{ form[dice_type](class="dice-input") }}
+                        <button type="button" class="roll-button btn-primary" data-dice="{{ dice_type }}">
+                            Roll
+                        </button>
+                        <button type="button" class="clear-button btn-secondary" data-dice="{{ dice_type }}">
+                            Clear
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dice-results-area">
+                    <div class="dice-results">
+                        <h4>Results:</h4>
+                        <div class="results-box" id="results-{{ dice_type }}">
+                            {% if results[dice_type].rolls %}
+                                {{ results[dice_type].rolls|join(", ") }}
+                            {% endif %}
+                        </div>
+                        
+                        <div class="dice-total">
+                            <h4>Total: <span id="total-{{ dice_type }}">{{ results[dice_type].total }}</span></h4>
+                        </div>    
+                    </div>
+                </div>
             </div>
-        </div>
-        {% endfor %}
-
-        <button type="button" id="clearButton">Clear Results</button>
-
-        <div id="total-result">
-            {% if grand_total %}
-                <h3>Grand Total of All Rolls: {{ grand_total }}</h3>
-            {% endif %}
+            {% endfor %}
         </div>
     </form>
 </main>
 
+<style>
+    :root {
+        --primary: #253231; /* Outer Space - Deep backgrounds */
+        --secondary: #80a4a3; /* Gumbo - Accents and highlights */
+        --text: #afc1b9; /* Powder Ash - Text and borders */
+        --accent: #73939c; /* Gothic - Interactive elements */
+        --transition: all 0.3s linear;
+        --gradient: linear-gradient(to bottom, #010101 0%, #253231 100%);
+}
+    .dice-roller-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--primary);
+    }
+    
+    .roller-instructions {
+        background-color: var(--secondary);
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid #6c757d;
+    }
+    
+    .grand-total-display {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--secondary);
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .grand-total-display h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    
+    .dice-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .dice-card {
+        border: 1px solid var(--primary);
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: var(--secondary);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .dice-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .dice-header {
+        background-color: var(--text);
+        padding: 10px 15px;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .dice-header h3 {
+        margin: 0 0 10px 0;
+        color: #495057;
+        font-size: 1.2rem;
+    }
+    
+    .dice-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .dice-input {
+        width: 60px;
+        padding: 5px 8px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        text-align: center;
+    }
+    
+    .dice-results-area {
+        padding: 0 15px;
+    }
+    
+    .dice-total {
+        margin-bottom: 15px;
+        padding: 8px 12px;
+        background-color: #e9ecef;
+        border-radius: 4px;
+    }
+    
+    .dice-total h4 {
+        margin: 0;
+        font-size: 1rem;
+    }
+    
+    .dice-results h4 {
+        margin: 0 0 8px 0;
+        font-size: 1.5rem;
+    }
+    
+    .results-box {
+        min-height: 80px;
+        max-height: 150px;
+        overflow-y: auto;
+        padding: 8px 12px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+        line-height: 1.5;
+        word-break: break-all;
+    }
+    
+    /* Button styles */
+    button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.15s;
+    }
+    
+    .btn-primary {
+        background-color: var(--primary);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: #0069d9;
+    }
+    
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+    
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+    
+    .btn-danger {
+        background-color: var(--primary);
+        color: white;
+    }
+    
+    .btn-danger:hover {
+        background-color: var(--accent);
+    }
+    
+    /* Animation for new rolls */
+    @keyframes highlight {
+        0% { background-color: rgba(40, 167, 69, 0.3); }
+        100% { background-color: transparent; }
+    }
+    
+    .highlight {
+        animation: highlight 1.5s ease-out;
+    }
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("dice-form");
-    const totalDiv = document.getElementById("total-result");
-
-    // Handle all roll buttons
+    const grandTotalElement = document.getElementById("grand-total");
+    
+    // Handle roll buttons
     document.querySelectorAll('.roll-button').forEach(button => {
         button.addEventListener('click', function(e) {
             const diceType = this.dataset.dice;
@@ -51,23 +241,66 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 body: formData
             })
-            .then(response => response.json())  // Changed to expect JSON response
+            .then(response => response.json())
             .then(data => {
-                // Update the specific dice result
-                document.getElementById('result-' + diceType).textContent = 
-                    data.results[diceType].join(", ");
-                
-                // Update total
-                totalDiv.innerHTML = `<h3>Grand Total of All Rolls: ${data.grand_total}</h3>`;
+                if (data.success) {
+                    // Update results
+                    const resultsElement = document.getElementById('results-' + diceType);
+                    resultsElement.textContent = data.results[diceType].rolls.join(", ");
+                    
+                    // Update dice total
+                    const totalElement = document.getElementById('total-' + diceType);
+                    totalElement.textContent = data.results[diceType].total;
+                    
+                    // Update grand total
+                    grandTotalElement.textContent = data.grand_total;
+                    
+                    // Apply highlight animation
+                    resultsElement.classList.remove('highlight');
+                    void resultsElement.offsetWidth; // Trigger reflow
+                    resultsElement.classList.add('highlight');
+                    
+                    // Scroll to bottom of results
+                    resultsElement.scrollTop = resultsElement.scrollHeight;
+                }
             })
             .catch(error => console.error('Error:', error));
         });
     });
-
-    // Handle clear button
-    document.getElementById('clearButton').addEventListener('click', function() {
+    
+    // Handle clear buttons for each dice type
+    document.querySelectorAll('.clear-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const diceType = this.dataset.dice;
+            const formData = new FormData();
+            formData.append('clear_' + diceType, 'clear');
+            
+            fetch('/dice', {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Clear specific dice results
+                    document.getElementById('results-' + diceType).textContent = '';
+                    document.getElementById('total-' + diceType).textContent = '0';
+                    
+                    // Update grand total
+                    grandTotalElement.textContent = data.grand_total;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+    
+    // Handle clear all button
+    document.getElementById('clear-all-button').addEventListener('click', function() {
         const formData = new FormData();
-        formData.append('clear', 'clear');
+        formData.append('clear_all', 'clear_all');
         
         fetch('/dice', {
             method: 'POST',
@@ -76,17 +309,37 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: formData
         })
-        .then(response => response.json())  // Changed to expect JSON response
+        .then(response => response.json())
         .then(data => {
-            // Clear all individual results
-            document.querySelectorAll('.dice-result').forEach(div => {
-                div.textContent = '';
-            });
-            // Clear total
-            totalDiv.innerHTML = '';
+            if (data.success) {
+                // Clear all results
+                document.querySelectorAll('.results-box').forEach(box => {
+                    box.textContent = '';
+                });
+                
+                // Clear all totals
+                document.querySelectorAll('[id^="total-"]').forEach(total => {
+                    total.textContent = '0';
+                });
+                
+                // Update grand total
+                grandTotalElement.textContent = '0';
+            }
         })
         .catch(error => console.error('Error:', error));
     });
+    
+    // Optional: Add sound effects for dice rolls
+    function playDiceSound() {
+        const audio = new Audio('/static/sounds/dice-roll.mp3');
+        audio.volume = 0.5;
+        audio.play().catch(e => console.log('Audio play failed: ', e));
+    }
+    
+    // Uncomment to enable sound (you'll need to add the sound file)
+    // document.querySelectorAll('.roll-button').forEach(button => {
+    //    button.addEventListener('click', playDiceSound);
+    // });
 });
 </script>
 {% endblock %}

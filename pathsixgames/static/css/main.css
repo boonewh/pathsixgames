@@ -480,108 +480,6 @@ figcaption a {
   font-weight: bold;
 }
 
-/* Dice Roller Styles - Contained to .diceMain */
-.diceMain {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: var(--secondary);
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-/* Grid Layout for Dice */
-.dice-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Individual Dice Block */
-.dice {
-  background: var(--primary);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  color: var(--text);
-  font-weight: bold;
-}
-
-/* Label & Inputs */
-.dice label {
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
-  color: var(--text);
-}
-
-.dice input[type="number"] {
-  width: 60px;
-  text-align: center;
-  padding: 6px;
-  font-size: 16px;
-  border: 1px solid var(--text);
-  border-radius: 4px;
-  background: var(--primary);
-  color: var(--text);
-}
-
-/* Buttons - Unified Styling */
-.dice button {
-  display: inline-block;
-  width: auto;
-  padding: 10px 15px;
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  border: 2px solid var(--accent);
-  border-radius: 6px;
-  cursor: pointer;
-  background: var(--accent);
-  color: var(--primary);
-  transition: var(--transition);
-}
-
-/* Button Hover & Active */
-.dice button:hover {
-  background: var(--secondary);
-  border-color: var(--text);
-}
-
-.dice button:active {
-  background: var(--primary);
-}
-
-/* Clear Button */
-#clearResults {
-  margin-top: 30px;
-  width: auto;
-  padding: 12px 20px;
-  font-size: 16px;
-  background: var(--accent);
-  border: 2px solid var(--secondary);
-  color: white;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-#clearResults:hover {
-  background: var(--secondary);
-}
-
-/* Total Display */
-#total {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--text);
-  margin-top: 20px;
-}
-
 /* Rules Styles */
 
 .rules {
@@ -842,8 +740,7 @@ form input[type="submit"]:hover {
 }
 
 span {
-  font-size: 0.8rem;
-  color: red;
+  font-size: 1.5rem;
 }
 
 .question {
